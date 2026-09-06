@@ -55,3 +55,12 @@ Five primary location cards now use the supplied reference photos:
 - Ao Nang Local Islands
 
 The earlier SVG artwork remains in the asset folders as a fallback/reference layer.
+
+
+## Step 5 Photo Pass
+
+The remaining featured food/recovery cards now use supplied location images:
+
+- Café 8.98
+- Thongyib Thongyod
+- Royal Palm Spa
