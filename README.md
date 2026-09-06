@@ -88,3 +88,8 @@ The remaining featured food/recovery cards now use supplied location images:
 - Added a 1200×630 social preview image.
 - Added a favicon.
 - Uses the latest cover with “Dive Deep. Climb High. Live Slow.” and no party-size label.
+
+
+## Footer cleanup
+
+- Removed the visible `Step 9 · Sharing Ready` build label from the public footer.
