@@ -93,3 +93,11 @@ The remaining featured food/recovery cards now use supplied location images:
 ## Footer cleanup
 
 - Removed the visible `Step 9 · Sharing Ready` build label from the public footer.
+
+## Step 10 · Interactive Checklist
+
+- Checklist items can be toggled complete/incomplete.
+- Completed cards turn light green.
+- Progress indicator shows completed count.
+- State is saved in browser `localStorage` and restored on the next visit.
+- This is device/browser-local persistence; it does not sync across devices.

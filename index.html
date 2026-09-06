@@ -179,7 +179,59 @@ section[id]{scroll-margin-top:76px}
 }
 
 
-/* </style><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." name="description"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." property="og:title"/><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." property="og:description"/><meta content="website" property="og:type"/><meta content="https://chkevinv8.github.io/krabi-2026/" property="og:url"/><meta content="https://chkevinv8.github.io/krabi-2026/assets/images/og-cover.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." name="twitter:title"/><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." name="twitter:description"/><meta content="https://chkevinv8.github.io/krabi-2026/assets/images/og-cover.jpg" name="twitter:image"/><link href="assets/favicon.png" rel="icon" type="image/png"/></head><body><div class="app">
+/* 
+/* Step 10 · interactive checklist */
+.check-progress{
+  display:flex;align-items:center;gap:10px;margin:12px 0 14px;
+  font-size:11px;color:var(--muted)
+}
+.check-progress-bar{
+  flex:1;height:7px;border-radius:999px;background:#eee5d6;overflow:hidden
+}
+.check-progress-fill{
+  width:0;height:100%;background:#7ea88a;border-radius:inherit;
+  transition:width .22s ease
+}
+.check-progress-count{white-space:nowrap;color:var(--forest);font-weight:700}
+
+.checkitem{
+  cursor:pointer;position:relative;transition:
+  background .18s ease,border-color .18s ease,transform .12s ease,box-shadow .18s ease;
+  user-select:none
+}
+.checkitem:hover{transform:translateY(-1px)}
+.checkitem:focus-visible{
+  outline:2px solid #c99a48;outline-offset:3px
+}
+.checkitem b{
+  display:flex;align-items:flex-start;gap:8px
+}
+.checkmark{
+  width:18px;height:18px;flex:0 0 18px;border-radius:50%;
+  border:1.5px solid #bd9a61;color:transparent;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:11px;line-height:1;margin-top:-1px;
+  background:#fff;transition:all .18s ease
+}
+.checkitem.done{
+  background:#eaf4ec;border-color:#b9d2bf;
+  box-shadow:inset 0 0 0 1px rgba(91,133,100,.03)
+}
+.checkitem.done .checkmark{
+  background:#5f8f69;border-color:#5f8f69;color:#fff
+}
+.checkitem.done b{color:#3f6849}
+.checkitem.done span:not(.checkmark){
+  color:#6f8172
+}
+.checkitem.done .checklabel{
+  text-decoration:line-through;text-decoration-thickness:1px;
+  text-decoration-color:#7c9c83
+}
+@media(max-width:760px){
+  .check-progress{margin-top:10px}
+}
+</style><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." name="description"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." property="og:title"/><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." property="og:description"/><meta content="website" property="og:type"/><meta content="https://chkevinv8.github.io/krabi-2026/" property="og:url"/><meta content="https://chkevinv8.github.io/krabi-2026/assets/images/og-cover.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." name="twitter:title"/><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." name="twitter:description"/><meta content="https://chkevinv8.github.io/krabi-2026/assets/images/og-cover.jpg" name="twitter:image"/><link href="assets/favicon.png" rel="icon" type="image/png"/></head><body><div class="app">
 <header class="hero hero-image-only">
 <img alt="Krabi 2026 · Dive · Climb · Unwind" src="assets/images/hero.png"/>
 </header>
@@ -508,14 +560,7 @@ section[id]{scroll-margin-top:76px}
 </section>
 <section id="checklist">
 <div class="section-title"><div><h2>出发前 Checklist</h2><p>出发前快速过一遍。</p></div><div class="gold">Ready before takeoff.</div></div>
-<div class="checkgrid">
-<div class="checkitem"><b>□ 潜水准备</b><span>泳衣 / 速干衣 / 防晒 / 水；确认课程装备包含、接送时间和当天集合点。</span></div><div class="checkitem"><b>□ 国际旅游保险</b><span>确认境外医疗 / 救援，以及潜水、攀岩是否在承保范围。</span></div>
-<div class="checkitem"><b>□ 泰国电话卡 / eSIM</b><span>eSIM / 实体卡都可以；保证地图、Grab 和联系潜店/向导有网。</span></div>
-<div class="checkitem"><b>□ TDAC · 9/23 左右填写</b><span>泰国数字入境卡；按抵达日前 3 天规则准备，首晚住宿填 Grand Mercure Krabi Ao Nang。</span></div>
-<div class="checkitem"><b>□ KBV → BKK 航班</b><span>尚未确认；目前倾向 10/3 飞 BKK，曼谷住一晚。</span></div>
-<div class="checkitem"><b>□ 攀岩向导</b><span>确认 Tonsai / Railay 向导；DWS 单独问 Basecamp 当周是否出团。</span></div>
-<div class="checkitem"><b>□ 攀岩装备方案</b><span>岩鞋自己带；确认向导是否含绳、快挂、头盔。</span></div><div class="checkitem"><b>□ 防水 / 海岛装备</b><span>Dry bag、手机防水袋、涉水凉鞋、防晒、驱蚊、薄雨衣。</span></div>
-</div>
+<div aria-live="polite" class="check-progress"><div aria-hidden="true" class="check-progress-bar"><div class="check-progress-fill"></div></div><div class="check-progress-count">0 / 8 Done</div></div><div class="checkgrid"><div aria-checked="false" class="checkitem" data-check-id="dive-prep" role="checkbox" tabindex="0"><b><span aria-hidden="true" class="checkmark">✓</span><span class="checklabel">潜水准备</span></b><span>泳衣 / 速干衣 / 防晒 / 水；确认课程装备包含、接送时间和当天集合点。</span></div><div aria-checked="false" class="checkitem" data-check-id="travel-insurance" role="checkbox" tabindex="0"><b><span aria-hidden="true" class="checkmark">✓</span><span class="checklabel">国际旅游保险</span></b><span>确认境外医疗 / 救援，以及潜水、攀岩是否在承保范围。</span></div><div aria-checked="false" class="checkitem" data-check-id="sim-esim" role="checkbox" tabindex="0"><b><span aria-hidden="true" class="checkmark">✓</span><span class="checklabel">泰国电话卡 / eSIM</span></b><span>eSIM / 实体卡都可以；保证地图、Grab 和联系潜店/向导有网。</span></div><div aria-checked="false" class="checkitem" data-check-id="tdac" role="checkbox" tabindex="0"><b><span aria-hidden="true" class="checkmark">✓</span><span class="checklabel">TDAC · 9/23 左右填写</span></b><span>泰国数字入境卡；按抵达日前 3 天规则准备，首晚住宿填 Grand Mercure Krabi Ao Nang。</span></div><div aria-checked="false" class="checkitem" data-check-id="kbv-bkk" role="checkbox" tabindex="0"><b><span aria-hidden="true" class="checkmark">✓</span><span class="checklabel">KBV → BKK 航班</span></b><span>尚未确认；目前倾向 10/3 飞 BKK，曼谷住一晚。</span></div><div aria-checked="false" class="checkitem" data-check-id="climbing-guide" role="checkbox" tabindex="0"><b><span aria-hidden="true" class="checkmark">✓</span><span class="checklabel">攀岩向导</span></b><span>确认 Tonsai / Railay 向导；DWS 单独问 Basecamp 当周是否出团。</span></div><div aria-checked="false" class="checkitem" data-check-id="climbing-gear" role="checkbox" tabindex="0"><b><span aria-hidden="true" class="checkmark">✓</span><span class="checklabel">攀岩装备方案</span></b><span>岩鞋自己带；确认向导是否含绳、快挂、头盔。</span></div><div aria-checked="false" class="checkitem" data-check-id="water-gear" role="checkbox" tabindex="0"><b><span aria-hidden="true" class="checkmark">✓</span><span class="checklabel">防水 / 海岛装备</span></b><span>Dry bag、手机防水袋、涉水凉鞋、防晒、驱蚊、薄雨衣。</span></div></div>
 </section>
 <section id="pending"><div class="section-title"><div><h2>待确认</h2><p>确认后同步到对应日期。</p></div></div><div class="pending"><div><small>暂定</small><b>9/29 住宿</b></div><div><small>待预订</small><b>KBV → BKK</b></div><div><small>待确认</small><b>攀岩向导</b></div><div><small>待决定</small><b>10/3 Bangkok</b></div>
 </div></section>
@@ -568,4 +613,64 @@ section[id]{scroll-margin-top:76px}
   updateActiveSection();
 })();
 </script>
-</body></html>
+<script>
+(() => {
+  const cards = [...document.querySelectorAll('#checklist .checkitem[data-check-id]')];
+  const count = document.querySelector('#checklist .check-progress-count');
+  const fill = document.querySelector('#checklist .check-progress-fill');
+  if (!cards.length) return;
+
+  const storageKey = 'krabi-2026-checklist-v1';
+
+  function loadState() {
+    try {
+      return JSON.parse(localStorage.getItem(storageKey) || '{}') || {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveState(state) {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(state));
+    } catch (e) {}
+  }
+
+  let state = loadState();
+
+  function render() {
+    let done = 0;
+
+    cards.forEach(card => {
+      const id = card.dataset.checkId;
+      const isDone = state[id] === true;
+      card.classList.toggle('done', isDone);
+      card.setAttribute('aria-checked', isDone ? 'true' : 'false');
+      if (isDone) done += 1;
+    });
+
+    const total = cards.length;
+    if (count) count.textContent = `${done} / ${total} Done`;
+    if (fill) fill.style.width = `${total ? (done / total) * 100 : 0}%`;
+  }
+
+  function toggle(card) {
+    const id = card.dataset.checkId;
+    state[id] = !(state[id] === true);
+    saveState(state);
+    render();
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => toggle(card));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle(card);
+      }
+    });
+  });
+
+  render();
+})();
+</script></body></html>
