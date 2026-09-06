@@ -42,3 +42,16 @@ krabi-2026/
 ## Live Site
 
 https://chkevinv8.github.io/krabi-2026/
+
+
+## Step 4 Photo Pass
+
+Five primary location cards now use the supplied reference photos:
+
+- Fire Wall
+- Cat Wall
+- Melting Wall
+- The Dive Ao Nang
+- Ao Nang Local Islands
+
+The earlier SVG artwork remains in the asset folders as a fallback/reference layer.
