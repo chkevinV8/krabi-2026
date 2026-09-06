@@ -101,3 +101,19 @@ The remaining featured food/recovery cards now use supplied location images:
 - Progress indicator shows completed count.
 - State is saved in browser `localStorage` and restored on the next visit.
 - This is device/browser-local persistence; it does not sync across devices.
+
+## Step 11 · Smart Date Navigation
+
+- The date strip is hidden by default.
+- Clicking the main `每日行程` navigation item reveals it.
+- While viewing the Daily section, the date strip stays sticky below the main navigation.
+- Clicking another main section immediately collapses it.
+- Scrolling out of the Daily section also collapses it automatically.
+
+## Step 11.1 · Stable Date Navigation
+
+- Moved the date strip directly below the primary sticky navigation.
+- Removed the IntersectionObserver-based behavior that could close the strip during smooth scrolling.
+- The strip opens only when `每日行程` is selected.
+- It stays pinned below the main navigation while browsing Daily.
+- It closes when another main section is selected or after scrolling completely out of Daily.

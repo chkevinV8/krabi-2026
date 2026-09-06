@@ -231,11 +231,56 @@ section[id]{scroll-margin-top:76px}
 @media(max-width:760px){
   .check-progress{margin-top:10px}
 }
+
+
+/* Step 11.1 · stable contextual date navigation */
+#daily-date-nav{
+  display:flex;
+  gap:7px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  max-height:0;
+  opacity:0;
+  pointer-events:none;
+  margin:0;
+  padding:0 28px;
+  background:var(--cream,#f7f1e6);
+  border-bottom:1px solid transparent;
+  transform:translateY(-6px);
+  transition:max-height .22s ease,opacity .16s ease,transform .22s ease,
+             padding .22s ease,border-color .22s ease;
+  position:sticky;
+  top:var(--main-nav-height,64px);
+  z-index:19;
+}
+body.daily-date-nav-on #daily-date-nav{
+  max-height:60px;
+  opacity:1;
+  pointer-events:auto;
+  padding-top:12px;
+  padding-bottom:12px;
+  border-bottom-color:var(--line);
+  transform:translateY(0);
+}
+#daily-date-nav a{
+  flex:0 0 auto;
+}
+@media(max-width:760px){
+  #daily-date-nav{padding-left:16px;padding-right:16px}
+  body.daily-date-nav-on #daily-date-nav{
+    max-height:56px;
+    padding-top:9px;
+    padding-bottom:9px;
+  }
+}
+
+body.daily-date-nav-on #daily{scroll-margin-top:122px}
+@media(max-width:760px){body.daily-date-nav-on #daily{scroll-margin-top:110px}}
 </style><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." name="description"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." property="og:title"/><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." property="og:description"/><meta content="website" property="og:type"/><meta content="https://chkevinv8.github.io/krabi-2026/" property="og:url"/><meta content="https://chkevinv8.github.io/krabi-2026/assets/images/og-cover.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." name="twitter:title"/><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." name="twitter:description"/><meta content="https://chkevinv8.github.io/krabi-2026/assets/images/og-cover.jpg" name="twitter:image"/><link href="assets/favicon.png" rel="icon" type="image/png"/></head><body><div class="app">
 <header class="hero hero-image-only">
 <img alt="Krabi 2026 · Dive · Climb · Unwind" src="assets/images/hero.png"/>
 </header>
-<nav><a href="#maps">地图</a><a href="#places">打卡点</a><a href="#daily">每日行程</a><a href="#diving">潜水</a><a href="#cragguide">theCrag</a><a href="#gear">装备</a><a href="#backup">备选</a><a href="#checklist">Checklist</a><a href="#pending">待确认</a></nav>
+<nav><a href="#maps">地图</a><a href="#places">打卡点</a><a href="#daily">每日行程</a><a href="#diving">潜水</a><a href="#cragguide">theCrag</a><a href="#gear">装备</a><a href="#backup">备选</a><a href="#checklist">Checklist</a><a href="#pending">待确认</a></nav><div class="daynav smart-date-nav" id="daily-date-nav"><a href="#d0925">09.25</a><a href="#d0926">09.26</a><a href="#d0927">09.27</a><a href="#d0928">09.28</a><a href="#d0929">09.29</a><a href="#d0930">09.30</a><a href="#d1001">10.01</a><a href="#d1002">10.02</a><a href="#d1003">10.03</a><a href="#d1004">10.04</a></div>
 <section id="maps"><div class="section-title"><div><h2>地图 / 交通</h2><p>按 Ao Nang / Railay 分区。</p></div><div class="gold">Know where you're going.</div></div>
 <div class="tripmap">
 <img alt="KRABI 2026 手绘旅行地图" src="assets/images/map/krabi-map.png"/>
@@ -276,7 +321,7 @@ section[id]{scroll-margin-top:76px}
 </div>
 </section>
 <section id="daily"><div class="section-title"><div><h2>每日行程</h2><p>当天路线、装备和备选都放在一起。</p></div><div class="gold">One Day at a Time.</div></div>
-<div class="daynav"><a href="#d0925">09.25</a><a href="#d0926">09.26</a><a href="#d0927">09.27</a><a href="#d0928">09.28</a><a href="#d0929">09.29</a><a href="#d0930">09.30</a><a href="#d1001">10.01</a><a href="#d1002">10.02</a><a href="#d1003">10.03</a><a href="#d1004">10.04</a></div>
+
 <article class="day" id="d0925">
 <div class="date"><strong>09.25</strong><span>抵达 · Ao Nang</span></div>
 <div class="daybody">
@@ -672,5 +717,94 @@ section[id]{scroll-margin-top:76px}
   });
 
   render();
+})();
+</script><script>
+(() => {
+  const daily = document.querySelector('#daily');
+  const dateNav = document.querySelector('#daily-date-nav');
+  const mainNav = document.querySelector('nav');
+  const dailyTab = document.querySelector('nav a[href="#daily"]');
+  const sectionTabs = [...document.querySelectorAll('nav a[href^="#"]')];
+  if (!daily || !dateNav || !mainNav || !dailyTab) return;
+
+  let dailyMode = false;
+  let hasEnteredDaily = false;
+  let raf = 0;
+
+  function setMainNavHeight() {
+    document.documentElement.style.setProperty(
+      '--main-nav-height',
+      `${Math.ceil(mainNav.getBoundingClientRect().height)}px`
+    );
+  }
+
+  function openDateNav() {
+    dailyMode = true;
+    hasEnteredDaily = false;
+    document.body.classList.add('daily-date-nav-on');
+    setMainNavHeight();
+  }
+
+  function closeDateNav() {
+    dailyMode = false;
+    hasEnteredDaily = false;
+    document.body.classList.remove('daily-date-nav-on');
+  }
+
+  function updateFromScroll() {
+    raf = 0;
+    if (!dailyMode) return;
+
+    const r = daily.getBoundingClientRect();
+    const navH = mainNav.getBoundingClientRect().height;
+    const dateH = document.body.classList.contains('daily-date-nav-on')
+      ? dateNav.getBoundingClientRect().height
+      : 0;
+    const topLimit = navH + dateH + 8;
+
+    // Mark that the smooth-scroll has actually reached the Daily section.
+    if (r.top <= topLimit + 120 && r.bottom > topLimit + 120) {
+      hasEnteredDaily = true;
+    }
+
+    // Only auto-close AFTER Daily has actually been entered.
+    // This prevents the bar from collapsing during the initial smooth scroll.
+    if (hasEnteredDaily && (r.bottom <= topLimit || r.top >= window.innerHeight - 8)) {
+      closeDateNav();
+    }
+  }
+
+  dailyTab.addEventListener('click', () => {
+    openDateNav();
+  });
+
+  sectionTabs.forEach(link => {
+    if (link !== dailyTab) {
+      link.addEventListener('click', closeDateNav);
+    }
+  });
+
+  // Date buttons keep the mode open.
+  dateNav.addEventListener('click', () => {
+    if (dailyMode) document.body.classList.add('daily-date-nav-on');
+  });
+
+  window.addEventListener('scroll', () => {
+    if (!raf) raf = requestAnimationFrame(updateFromScroll);
+  }, { passive:true });
+
+  window.addEventListener('resize', () => {
+    setMainNavHeight();
+    updateFromScroll();
+  });
+
+  // On reload/hash visit, only show it when the URL explicitly targets Daily.
+  if (location.hash === '#daily') {
+    openDateNav();
+  } else {
+    closeDateNav();
+  }
+
+  setMainNavHeight();
 })();
 </script></body></html>
