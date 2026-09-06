@@ -1,9 +1,11 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KRABI 2026 · Dive / Climb / Rest</title><style>
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>KRABI 2026 · Dive / Climb / Rest</title><style>
 :root{--forest:#103d32;--forest2:#195344;--cream:#f7f1e5;--paper:#fffaf2;--gold:#d0a34f;--ink:#1f302a;--muted:#68736d;--line:#ddd4c6;--ok:#157257;--sand:#ead7ac}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif}.app{max-width:1180px;margin:auto;background:#fbf7ee;min-height:100vh}
 .hero{height:440px;position:relative;background-size:cover;background-position:center 18%;color:white;padding:44px 40px;display:flex;align-items:end}
 .hero .copy{max-width:700px}.hero .eyebrow{font-family:Georgia,serif;letter-spacing:.18em;font-size:12px}.hero h1{font-family:Georgia,serif;font-size:clamp(54px,9vw,100px);line-height:.78;margin:10px 0 17px;letter-spacing:-.055em}.script{font-family:cursive;color:#efbd42;font-size:26px;transform:rotate(-3deg);display:inline-block}.hero p{font-size:18px;margin:12px 0}.meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:#eef3f0}
-nav{position:sticky;top:0;z-index:20;background:var(--forest);display:flex;gap:4px;overflow:auto;padding:9px 20px;border-bottom:1px solid rgba(255,255,255,.1)}nav a{color:white;padding:10px 13px;border-radius:9px;white-space:nowrap;font-size:12px}nav a:first-child{background:var(--sand);color:#26362f}
+nav{position:sticky;top:0;z-index:20;background:var(--forest);display:flex;gap:4px;overflow:auto;padding:9px 20px;border-bottom:1px solid rgba(255,255,255,.1)}nav a{color:white;padding:10px 13px;border-radius:9px;white-space:nowrap;font-size:12px}nav a.active{background:var(--sand);color:#26362f}
 section{padding:34px 28px 54px;scroll-margin-top:70px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:19px}.section-title h2{font-family:Georgia,"Songti SC",serif;color:var(--forest);font-size:34px;margin:0}.section-title p{margin:0;color:var(--muted);font-size:12px}.rule{height:1px;background:var(--line);margin:12px 0 20px}
 .hotel-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.photo-card{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 7px 24px rgba(43,49,45,.06)}.photo{height:270px;background-size:cover;background-position:center;position:relative}.status{position:absolute;right:12px;top:12px;background:var(--ok);color:white;border-radius:999px;padding:7px 11px;font-size:10px}.pcopy{padding:15px}.pcopy h3{font-family:Georgia,"Songti SC",serif;font-size:20px;margin:0 0 5px;color:#1b2924}.pcopy p{font-size:12px;color:var(--muted);margin:0}.stars{color:#efa900;margin:9px 0;font-size:13px}.facts{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:#45574f}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}.btn{text-align:center;border-radius:8px;padding:10px;background:#f0ece2;font-size:11px}.btn.primary{background:#0c7757;color:white}
 .small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.smallcard{background:white;border:1px solid var(--line);border-radius:14px;overflow:hidden}.smallpic{height:150px;background:linear-gradient(135deg,#164b3e,#cda658);display:flex;align-items:end;padding:13px;color:white;font-family:Georgia,serif;font-size:19px}.smallbody{padding:13px}.smallbody b{display:block;color:var(--forest);margin-bottom:4px}.smallbody span{font-size:11px;color:var(--muted);line-height:1.45}
@@ -89,19 +91,19 @@ nav a{padding:9px 12px!important;font-size:12px!important;text-decoration:none!i
 .hero-image-only img{display:block;width:100%;height:auto}
 @media(max-width:760px){.hero-image-only{height:auto!important}.hero-image-only img{width:100%;height:auto}}
 
-.divegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.divecard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.divehead{height:150px;background:linear-gradient(135deg,#0e5c6d,#4ca7b8);display:flex;align-items:flex-end;padding:14px;color:#fff;font-family:Georgia,serif;font-size:20px}
-.divebody{padding:14px}.divebody h3{margin:0 0 7px;color:var(--forest);font-size:18px}.divebody p{font-size:11px;line-height:1.5;color:var(--muted);margin:0 0 10px}
+
+
+
+.divebody h3{margin:0 0 7px;color:var(--forest);font-size:18px}.divebody p{font-size:11px;line-height:1.5;color:var(--muted);margin:0 0 10px}
 .divechips{display:flex;gap:6px;flex-wrap:wrap}.divechips span{background:#eef3f1;border-radius:999px;padding:5px 7px;font-size:9px;color:#3e5a52}
-@media(max-width:760px){.divegrid{grid-template-columns:1fr}.divehead{height:125px}}
+@media(max-width:760px){}
 
 /* V19 mobile density + chip overflow fix */
 @media(max-width:760px){
   /* Diving / content cards: reduce oversized visual headers and padding */
-  .divecard{border-radius:13px}
-  .divehead{height:auto!important;min-height:72px!important;padding:16px 18px!important;font-size:18px!important;align-items:center!important}
-  .divebody{padding:14px 16px!important}
+  
+  
+  
   .divebody h3{font-size:17px!important;margin-bottom:5px!important}
   .divebody p{font-size:11px!important;line-height:1.45!important;margin-bottom:8px!important}
   .divechips{gap:5px!important;margin-top:5px}
@@ -166,291 +168,294 @@ nav a{padding:9px 12px!important;font-size:12px!important;text-decoration:none!i
 .smallpic.photo{padding:0;overflow:hidden;background:none}
 .smallpic.photo img{display:block;width:100%;height:100%;min-height:165px;object-fit:cover}
 
+
+/* Step 6 · code review */
+section[id]{scroll-margin-top:76px}
+.dive-visualgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.dive-info-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.dive-info-row .gearbox{margin:0}
+@media(max-width:760px){
+  .dive-visualgrid,.dive-info-row{grid-template-columns:1fr}
+}
+
+
+/* Step 7.1 · FLEX crop fix */
+.flex-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.flex-card{display:flex;flex-direction:column}
+.flex-card>img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.flex-card .visualbody{display:flex;flex-direction:column;flex:1}
+.flex-card .actions{margin-top:auto}
+@media(max-width:760px){.flex-grid{grid-template-columns:1fr}}
+
 </style></head><body><div class="app">
-
 <header class="hero hero-image-only">
-  <img src="assets/images/hero.png" alt="Krabi 2026 · Dive · Climb · Unwind">
+<img alt="Krabi 2026 · Dive · Climb · Unwind" src="assets/images/hero.png"/>
 </header>
-
 <nav><a href="#maps">地图</a><a href="#places">打卡点</a><a href="#daily">每日行程</a><a href="#diving">潜水</a><a href="#cragguide">theCrag</a><a href="#gear">装备</a><a href="#backup">备选</a><a href="#checklist">Checklist</a><a href="#pending">待确认</a></nav>
 <section id="maps"><div class="section-title"><div><h2>地图 / 交通</h2><p>按 Ao Nang / Railay 分区。</p></div><div class="gold">Know where you're going.</div></div>
 <div class="tripmap">
-<img src="assets/images/map/krabi-map.png" alt="KRABI 2026 手绘旅行地图">
+<img alt="KRABI 2026 手绘旅行地图" src="assets/images/map/krabi-map.png"/>
 <div class="mapnote">这张图是你的「旅行总览地图」：重点标记 Grand Mercure、Bhu Nga Thani、The Dive、Royal Palm Spa、Ao Nang Pier、Railay West，以及 Fire / Cat / Cobra / Melting Wall。用于快速理解相对位置；实际导航继续使用下方地图按钮 / theCrag。</div>
 </div>
 <div class="rule"></div>
-<div class="map-grid"><div class="mapbox"><h3>Ao Nang</h3><p>潜水 / 恢复阶段</p><div class="place"><div><b>Grand Mercure</b><span>酒店</span></div><a target="_blank" class="maplink" href="https://www.google.com/maps/search/?api=1&query=Grand+Mercure+Krabi+Ao+Nang">打开地图 ↗</a></div><div class="place"><div><b>The Dive Ao Nang</b><span>OW</span></div><a target="_blank" class="maplink" href="https://www.google.com/maps/search/?api=1&query=The+Dive+Ao+Nang+Krabi">打开地图 ↗</a></div><div class="place"><div><b>Royal Palm Spa</b><span>Spa</span></div><a target="_blank" class="maplink" href="https://www.google.com/maps/search/?api=1&query=Royal+Palm+Spa+Ao+Nang+Krabi">打开地图 ↗</a></div><div class="place"><div><b>Café 8.98</b><span>Coffee</span></div><a target="_blank" class="maplink" href="https://www.google.com/maps/search/?api=1&query=Cafe+8.98+Ao+Nang">打开地图 ↗</a></div><div class="place"><div><b>Longtail Boat Service</b><span>去 Railay</span></div><a target="_blank" class="maplink" href="https://www.google.com/maps/search/?api=1&query=Ao+Nang+Longtail+Boat+Service+Club">打开地图 ↗</a></div></div><div class="mapbox"><h3>Railay / Tonsai</h3><p>攀岩阶段</p><div class="place"><div><b>Bhu Nga Thani</b><span>酒店</span></div><a target="_blank" class="maplink" href="https://www.google.com/maps/search/?api=1&query=Bhu+Nga+Thani+Resort+Villas+Railay">打开地图 ↗</a></div><div class="place"><div><b>Railay West</b><span>日落 / SUP</span></div><a target="_blank" class="maplink" href="https://www.google.com/maps/search/?api=1&query=Railay+West+Beach">打开地图 ↗</a></div><div class="place"><div><b>Fire Wall</b><span>Day 1</span></div><a target="_blank" class="maplink" href="https://www.google.com/maps/search/?api=1&query=Fire+Wall+Tonsai+Krabi+climbing">打开地图 ↗</a></div><div class="place"><div><b>Cat Wall</b><span>Day 2</span></div><a target="_blank" class="maplink" href="https://www.google.com/maps/search/?api=1&query=Cat+Wall+Tonsai+Krabi+climbing">打开地图 ↗</a></div><div class="place"><div><b>Cobra Wall</b><span>Day 3</span></div><a target="_blank" class="maplink" href="https://www.google.com/maps/search/?api=1&query=Cobra+Wall+Tonsai+Krabi+climbing">打开地图 ↗</a></div></div></div></section>
-<section id="places"><div class="section-title"><div><h2>打卡点 · 酒店住宿</h2><p>住得舒服，潜水和攀岩都更轻松。</p></div><div class="gold">Rest well. Dive & climb better.</div></div>
+<div class="map-grid"><div class="mapbox"><h3>Ao Nang</h3><p>潜水 / 恢复阶段</p><div class="place"><div><b>Grand Mercure</b><span>酒店</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Grand+Mercure+Krabi+Ao+Nang" rel="noopener" target="_blank">打开地图 ↗</a></div><div class="place"><div><b>The Dive Ao Nang</b><span>OW</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=The+Dive+Ao+Nang+Krabi" rel="noopener" target="_blank">打开地图 ↗</a></div><div class="place"><div><b>Royal Palm Spa</b><span>Spa</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Royal+Palm+Spa+Ao+Nang+Krabi" rel="noopener" target="_blank">打开地图 ↗</a></div><div class="place"><div><b>Café 8.98</b><span>Coffee</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+8.98+Ao+Nang" rel="noopener" target="_blank">打开地图 ↗</a></div><div class="place"><div><b>Longtail Boat Service</b><span>去 Railay</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Ao+Nang+Longtail+Boat+Service+Club" rel="noopener" target="_blank">打开地图 ↗</a></div></div><div class="mapbox"><h3>Railay / Tonsai</h3><p>攀岩阶段</p><div class="place"><div><b>Bhu Nga Thani</b><span>酒店</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Bhu+Nga+Thani+Resort+Villas+Railay" rel="noopener" target="_blank">打开地图 ↗</a></div><div class="place"><div><b>Railay West</b><span>日落 / SUP</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Railay+West+Beach" rel="noopener" target="_blank">打开地图 ↗</a></div><div class="place"><div><b>Fire Wall</b><span>Day 1</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Fire+Wall+Tonsai+Krabi+climbing" rel="noopener" target="_blank">打开地图 ↗</a></div><div class="place"><div><b>Cat Wall</b><span>Day 2</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Cat+Wall+Tonsai+Krabi+climbing" rel="noopener" target="_blank">打开地图 ↗</a></div><div class="place"><div><b>Cobra Wall</b><span>Day 3</span></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Cobra+Wall+Tonsai+Krabi+climbing" rel="noopener" target="_blank">打开地图 ↗</a></div></div></div></section>
+<section id="places"><div class="section-title"><div><h2>打卡点 · 酒店住宿</h2><p>住得舒服，潜水和攀岩都更轻松。</p></div><div class="gold">Rest well. Dive &amp; climb better.</div></div>
 <div class="hotel-grid">
-<div class="photo-card"><div class="photo" style="background-image:url('assets/images/hotels/grand-mercure.jpg')"><span class="status">已预订</span></div><div class="pcopy"><h3>Grand Mercure Krabi Ao Nang</h3><p>甲米奥南美居酒店</p><div class="stars">★★★★★ <span style="color:#666">· Ao Nang</span></div><div class="facts"><span>📍 9/25–9/28</span><span>≈ 泳池</span><span>▣ 健身房</span><span>♨ Rooftop Bar</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Grand+Mercure+Krabi+Ao+Nang">地图</a><a class="btn" target="_blank" href="https://all.accor.com/hotel/B6F7/index.en.shtml">查看官网</a></div></div></div>
-<div class="photo-card"><div class="photo" style="background-image:url('assets/images/hotels/bhu-nga-thani.jpg')"><span class="status">已预订</span></div><div class="pcopy"><h3>Bhu Nga Thani Resort & Villas</h3><p>布恩格塔尼度假村 · Railay East</p><div class="stars">★★★★★ <span style="color:#666">· Railay</span></div><div class="facts"><span>📍 9/30–10/3</span><span>≈ 泳池</span><span>▣ 健身房</span><span>♨ Pool Bar</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bhu+Nga+Thani+Resort+Villas+Railay">地图</a><a class="btn" target="_blank" href="https://www.bhungathani.com/">查看官网</a></div></div></div>
+<div class="photo-card"><div class="photo" style="background-image:url('assets/images/hotels/grand-mercure.jpg')"><span class="status">已预订</span></div><div class="pcopy"><h3>Grand Mercure Krabi Ao Nang</h3><p>甲米奥南美居酒店</p><div class="stars">★★★★★ <span style="color:#666">· Ao Nang</span></div><div class="facts"><span>📍 9/25–9/28</span><span>≈ 泳池</span><span>▣ 健身房</span><span>♨ Rooftop Bar</span></div><div class="actions"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=Grand+Mercure+Krabi+Ao+Nang" rel="noopener" target="_blank">地图</a><a class="btn" href="https://all.accor.com/hotel/B6F7/index.en.shtml" rel="noopener" target="_blank">查看官网</a></div></div></div>
+<div class="photo-card"><div class="photo" style="background-image:url('assets/images/hotels/bhu-nga-thani.jpg')"><span class="status">已预订</span></div><div class="pcopy"><h3>Bhu Nga Thani Resort &amp; Villas</h3><p>布恩格塔尼度假村 · Railay East</p><div class="stars">★★★★★ <span style="color:#666">· Railay</span></div><div class="facts"><span>📍 9/30–10/3</span><span>≈ 泳池</span><span>▣ 健身房</span><span>♨ Pool Bar</span></div><div class="actions"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=Bhu+Nga+Thani+Resort+Villas+Railay" rel="noopener" target="_blank">地图</a><a class="btn" href="https://www.bhungathani.com/" rel="noopener" target="_blank">查看官网</a></div></div></div>
 </div>
-
 <div class="section-title" style="margin-top:30px"><div><h2>餐厅 / 咖啡</h2><p>按当天位置和胃口选。</p></div><div class="gold">Good Food, Better Mood.</div></div>
 <div class="small-grid">
-<div class="smallcard"><div class="smallpic photo"><img src="assets/images/food/cafe-898.jpg" alt="Café 8.98 Ao Nang"></div><div class="smallbody"><b>Ao Nang · 人气咖啡馆</b><span>咖啡 / 早餐 / brunch。9/29 如果留奥南，适合慢慢开始一天。</span></div></div>
-<div class="smallcard"><div class="smallpic photo"><img src="assets/images/food/thongyib-thongyod.jpg" alt="Thongyib Thongyod Brunch & Cafe"></div><div class="smallbody"><b>泰式创意料理 & Brunch</b><span>恢复日优先，不为了打卡赶路。</span></div></div>
-<div class="smallcard"><div class="smallpic photo"><img src="assets/images/food/royal-palm-spa.jpg" alt="Royal Palm Spa"></div><div class="smallbody"><b>Relax / Recover</b><span>潜水后选 relaxing / oil massage，避免 aggressive deep tissue。</span></div></div>
+<div class="smallcard"><div class="smallpic photo"><img alt="Café 8.98 Ao Nang" src="assets/images/food/cafe-898.jpg"/></div><div class="smallbody"><b>Ao Nang · 人气咖啡馆</b><span>咖啡 / 早餐 / brunch。9/29 如果留奥南，适合慢慢开始一天。</span></div></div>
+<div class="smallcard"><div class="smallpic photo"><img alt="Thongyib Thongyod Brunch &amp; Cafe" src="assets/images/food/thongyib-thongyod.jpg"/></div><div class="smallbody"><b>泰式创意料理 &amp; Brunch</b><span>恢复日优先，不为了打卡赶路。</span></div></div>
+<div class="smallcard"><div class="smallpic photo"><img alt="Royal Palm Spa" src="assets/images/food/royal-palm-spa.jpg"/></div><div class="smallbody"><b>Relax / Recover</b><span>潜水后选 relaxing / oil massage，避免 aggressive deep tissue。</span></div></div>
 </div>
 <div class="section-title" style="margin-top:30px"><div><h2>更多餐厅 / 咖啡备选</h2><p>都是备选，顺路就去。</p></div><div class="gold">Pick by mood.</div></div>
 <div class="food-alt">
-<div class="foodcard"><small>BRUNCH · AO NANG</small><h4>Much & Mellow Bread & Brunch</h4><p>面包、咖啡和 all-day brunch，适合 9/29 恢复日上午慢慢吃。</p><div class="foodmeta"><span>08:00–22:00</span><span>฿200–400</span><span>Brunch</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Much+and+Mellow+Bread+Brunch+Ao+Nang">地图</a></div></div>
-<div class="foodcard"><small>BRUNCH · AO NANG</small><h4>Lemon's Café</h4><p>更偏轻松 brunch / dessert；如果想吃得简单、坐得舒服，是不错的替代。</p><div class="foodmeta"><span>09:00–20:00</span><span>฿200–400</span><span>Dessert</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Lemon%27s+Cafe+Ao+Nang+Krabi">地图</a></div></div>
-<div class="foodcard"><small>COFFEE · AO NANG</small><h4>YenlyYours Cafe</h4><p>评分和评论量都很高，预算较轻；适合下午想找地方坐一会儿。</p><div class="foodmeta"><span>09:30–21:30</span><span>฿1–200</span><span>Cafe</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=YenlyYours+Cafe+Ao+Nang">地图</a></div></div>
-<div class="foodcard"><small>EARLY BREAKFAST</small><h4>Shatterbox Kitchen & Bar</h4><p>06:00 就开门，特别适合潜水日早起吃早餐；比专门跑网红店更实用。</p><div class="foodmeta"><span>06:00–23:00</span><span>฿200–400</span><span>早开门</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Shatterbox+Kitchen+Bar+Ao+Nang">地图</a></div></div>
-<div class="foodcard"><small>THAI DINNER</small><h4>THAI ME UP PANG</h4><p>Ao Nang Beach Road 的泰餐备选，营业到较晚，潜水回来后不用赶时间。</p><div class="foodmeta"><span>09:30–23:00</span><span>฿200–400</span><span>Thai</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=THAI+ME+UP+PANG+Ao+Nang">地图</a></div></div>
-<div class="foodcard"><small>LOCAL THAI</small><h4>Loong Wich Restaurant</h4><p>价格更轻，本地泰餐取向；想吃得简单、不太“游客餐厅”时可以选。</p><div class="foodmeta"><span>11:00–23:00</span><span>฿1–200</span><span>Local Thai</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Loong+Wich+Restaurant+Ao+Nang">地图</a></div></div>
+<div class="foodcard"><small>BRUNCH · AO NANG</small><h4>Much &amp; Mellow Bread &amp; Brunch</h4><p>面包、咖啡和 all-day brunch，适合 9/29 恢复日上午慢慢吃。</p><div class="foodmeta"><span>08:00–22:00</span><span>฿200–400</span><span>Brunch</span></div><div class="actions"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=Much+and+Mellow+Bread+Brunch+Ao+Nang" rel="noopener" target="_blank">地图</a></div></div>
+<div class="foodcard"><small>BRUNCH · AO NANG</small><h4>Lemon's Café</h4><p>更偏轻松 brunch / dessert；如果想吃得简单、坐得舒服，是不错的替代。</p><div class="foodmeta"><span>09:00–20:00</span><span>฿200–400</span><span>Dessert</span></div><div class="actions"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=Lemon%27s+Cafe+Ao+Nang+Krabi" rel="noopener" target="_blank">地图</a></div></div>
+<div class="foodcard"><small>COFFEE · AO NANG</small><h4>YenlyYours Cafe</h4><p>评分和评论量都很高，预算较轻；适合下午想找地方坐一会儿。</p><div class="foodmeta"><span>09:30–21:30</span><span>฿1–200</span><span>Cafe</span></div><div class="actions"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=YenlyYours+Cafe+Ao+Nang" rel="noopener" target="_blank">地图</a></div></div>
+<div class="foodcard"><small>EARLY BREAKFAST</small><h4>Shatterbox Kitchen &amp; Bar</h4><p>06:00 就开门，特别适合潜水日早起吃早餐；比专门跑网红店更实用。</p><div class="foodmeta"><span>06:00–23:00</span><span>฿200–400</span><span>早开门</span></div><div class="actions"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=Shatterbox+Kitchen+Bar+Ao+Nang" rel="noopener" target="_blank">地图</a></div></div>
+<div class="foodcard"><small>THAI DINNER</small><h4>THAI ME UP PANG</h4><p>Ao Nang Beach Road 的泰餐备选，营业到较晚，潜水回来后不用赶时间。</p><div class="foodmeta"><span>09:30–23:00</span><span>฿200–400</span><span>Thai</span></div><div class="actions"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=THAI+ME+UP+PANG+Ao+Nang" rel="noopener" target="_blank">地图</a></div></div>
+<div class="foodcard"><small>LOCAL THAI</small><h4>Loong Wich Restaurant</h4><p>价格更轻，本地泰餐取向；想吃得简单、不太“游客餐厅”时可以选。</p><div class="foodmeta"><span>11:00–23:00</span><span>฿1–200</span><span>Local Thai</span></div><div class="actions"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=Loong+Wich+Restaurant+Ao+Nang" rel="noopener" target="_blank">地图</a></div></div>
 </div>
-
 <div class="section-title" style="margin-top:32px"><div><h2>按日期吃什么</h2><p>按日期放几个顺路选择。</p></div><div class="gold">Eat where the day takes you.</div></div>
 <div class="foodplan">
-<div class="foodday"><div class="fd">09.25 · 抵达日</div><div class="why">睡眠优先。下午醒来再决定，不专程跑店。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&query=Cafe+8.98+Ao+Nang" target="_blank">Café 8.98</a><a href="https://www.google.com/maps/search/?api=1&query=THAI+ME+UP+PANG+Ao+Nang" target="_blank">THAI ME UP PANG</a></div><div class="mealstrip">☕ 下午咖啡 / 轻食　→　🍜 海边附近晚餐</div></div>
-
-<div class="foodday"><div class="fd">09.26 · OW Day 1</div><div class="why">08:30 开课，早餐要简单可靠；晚上不要为了餐厅跑远。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&query=Shatterbox+Kitchen+Bar+Ao+Nang" target="_blank">Shatterbox · 早饭</a><a href="https://www.google.com/maps/search/?api=1&query=Loong+Wich+Restaurant+Ao+Nang" target="_blank">Loong Wich · 晚饭</a></div><div class="mealstrip">🥐 早开门　→　🤿 The Dive　→　🍚 简单泰餐 · 禁酒</div></div>
-
-<div class="foodday"><div class="fd">09.27 · OW Day 2</div><div class="why">约 07:30 pickup，优先酒店早餐 / 最省时间方案；潜水后补碳水和水。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&query=Ao+Nang+Landmark+Night+Market" target="_blank">Landmark Night Market</a><a href="https://www.google.com/maps/search/?api=1&query=THAI+ME+UP+PANG+Ao+Nang" target="_blank">THAI ME UP PANG</a></div><div class="mealstrip">🍳 酒店早饭　→　🤿 2 dives　→　♨ Spa 可选　→　🌙 夜市 / 泰餐</div></div>
-
-<div class="foodday"><div class="fd">09.28 · OW 完成日</div><div class="why">最后两潜结束后可以吃一顿更舒服的晚餐；状态好再喝一杯。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&query=Kodam+Kitchen+Ao+Nang" target="_blank">Kodam Kitchen</a><a href="https://www.google.com/maps/search/?api=1&query=Ton+Ma+Yom+Thai+Food+Ao+Nang" target="_blank">Ton Ma Yom</a></div><div class="mealstrip">🤿 OW complete　→　🌅 Sunset　→　🍛 Thai dinner　→　🍺 1 drink optional</div></div>
-
-<div class="foodday"><div class="fd">09.29 · Recovery Day</div><div class="why">这天最适合认真 brunch。根据是否提前去 Railay 决定，不跨区打卡。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&query=Much+and+Mellow+Bread+Brunch+Ao+Nang" target="_blank">Much & Mellow</a><a href="https://www.google.com/maps/search/?api=1&query=Thongyib+Thongyod+Ao+Nang" target="_blank">Thongyib</a><a href="https://www.google.com/maps/search/?api=1&query=Lemon%27s+Cafe+Ao+Nang+Krabi" target="_blank">Lemon's Café</a></div><div class="mealstrip">😴 Sleep in　→　☕ Brunch　→　🏊 Pool / Railay transfer　→　🍽 随缘晚餐</div></div>
-
-<div class="foodday"><div class="fd">09.30 · Fire Wall</div><div class="why">开始攀岩后，餐饮逻辑改成“离酒店 / 岩场近 + 恢复快”。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&query=Bhu+Nga+Thani+Resort+Railay+restaurant" target="_blank">Bhu Nga Thani · 早餐</a><a href="https://www.google.com/maps/search/?api=1&query=Railay+East+restaurants" target="_blank">Railay East · 晚饭</a></div><div class="mealstrip">🍳 早餐　→　🧗 Fire Wall　→　🥤 补水　→　🍚 高碳水 + 蛋白质</div></div>
-
-<div class="foodday"><div class="fd">10.01 · Cat Wall</div><div class="why">难度日不安排复杂夜生活。吃饱、恢复手皮和前臂。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&query=Railay+East+restaurants" target="_blank">Railay East</a><a href="https://www.google.com/maps/search/?api=1&query=Railay+Walking+Street+restaurants" target="_blank">Walking Street</a></div><div class="mealstrip">🧗 Cat Wall　→　🚿 Shower　→　🍜 Dinner　→　😴 Early night</div></div>
-
-<div class="foodday"><div class="fd">10.02 · Cobra / Melting</div><div class="why">这是最适合把“吃饭”跟日落体验绑在一起的一天。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&query=Railay+West+Beach+restaurants" target="_blank">Railay West · Sunset dinner</a><a href="https://www.google.com/maps/search/?api=1&query=Railay+Walking+Street+restaurants" target="_blank">Walking Street</a></div><div class="mealstrip">🧗 Climb　→　🏄 SUP 可选　→　🌅 Sunset　→　🍹 1 drink + dinner</div></div>
+<div class="foodday"><div class="fd">09.25 · 抵达日</div><div class="why">睡眠优先。下午醒来再决定，不专程跑店。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+8.98+Ao+Nang" rel="noopener" target="_blank">Café 8.98</a><a href="https://www.google.com/maps/search/?api=1&amp;query=THAI+ME+UP+PANG+Ao+Nang" rel="noopener" target="_blank">THAI ME UP PANG</a></div><div class="mealstrip">☕ 下午咖啡 / 轻食　→　🍜 海边附近晚餐</div></div>
+<div class="foodday"><div class="fd">09.26 · OW Day 1</div><div class="why">08:30 开课，早餐要简单可靠；晚上不要为了餐厅跑远。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&amp;query=Shatterbox+Kitchen+Bar+Ao+Nang" rel="noopener" target="_blank">Shatterbox · 早饭</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Loong+Wich+Restaurant+Ao+Nang" rel="noopener" target="_blank">Loong Wich · 晚饭</a></div><div class="mealstrip">🥐 早开门　→　🤿 The Dive　→　🍚 简单泰餐 · 禁酒</div></div>
+<div class="foodday"><div class="fd">09.27 · OW Day 2</div><div class="why">约 07:30 pickup，优先酒店早餐 / 最省时间方案；潜水后补碳水和水。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&amp;query=Ao+Nang+Landmark+Night+Market" rel="noopener" target="_blank">Landmark Night Market</a><a href="https://www.google.com/maps/search/?api=1&amp;query=THAI+ME+UP+PANG+Ao+Nang" rel="noopener" target="_blank">THAI ME UP PANG</a></div><div class="mealstrip">🍳 酒店早饭　→　🤿 2 dives　→　♨ Spa 可选　→　🌙 夜市 / 泰餐</div></div>
+<div class="foodday"><div class="fd">09.28 · OW 完成日</div><div class="why">最后两潜结束后可以吃一顿更舒服的晚餐；状态好再喝一杯。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&amp;query=Kodam+Kitchen+Ao+Nang" rel="noopener" target="_blank">Kodam Kitchen</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Ton+Ma+Yom+Thai+Food+Ao+Nang" rel="noopener" target="_blank">Ton Ma Yom</a></div><div class="mealstrip">🤿 OW complete　→　🌅 Sunset　→　🍛 Thai dinner　→　🍺 1 drink optional</div></div>
+<div class="foodday"><div class="fd">09.29 · Recovery Day</div><div class="why">这天最适合认真 brunch。根据是否提前去 Railay 决定，不跨区打卡。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&amp;query=Much+and+Mellow+Bread+Brunch+Ao+Nang" rel="noopener" target="_blank">Much &amp; Mellow</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Thongyib+Thongyod+Ao+Nang" rel="noopener" target="_blank">Thongyib</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Lemon%27s+Cafe+Ao+Nang+Krabi" rel="noopener" target="_blank">Lemon's Café</a></div><div class="mealstrip">😴 Sleep in　→　☕ Brunch　→　🏊 Pool / Railay transfer　→　🍽 随缘晚餐</div></div>
+<div class="foodday"><div class="fd">09.30 · Fire Wall</div><div class="why">开始攀岩后，餐饮逻辑改成“离酒店 / 岩场近 + 恢复快”。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&amp;query=Bhu+Nga+Thani+Resort+Railay+restaurant" rel="noopener" target="_blank">Bhu Nga Thani · 早餐</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Railay+East+restaurants" rel="noopener" target="_blank">Railay East · 晚饭</a></div><div class="mealstrip">🍳 早餐　→　🧗 Fire Wall　→　🥤 补水　→　🍚 高碳水 + 蛋白质</div></div>
+<div class="foodday"><div class="fd">10.01 · Cat Wall</div><div class="why">难度日不安排复杂夜生活。吃饱、恢复手皮和前臂。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&amp;query=Railay+East+restaurants" rel="noopener" target="_blank">Railay East</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Railay+Walking+Street+restaurants" rel="noopener" target="_blank">Walking Street</a></div><div class="mealstrip">🧗 Cat Wall　→　🚿 Shower　→　🍜 Dinner　→　😴 Early night</div></div>
+<div class="foodday"><div class="fd">10.02 · Cobra / Melting</div><div class="why">这是最适合把“吃饭”跟日落体验绑在一起的一天。</div><div class="choices"><a class="pick" href="https://www.google.com/maps/search/?api=1&amp;query=Railay+West+Beach+restaurants" rel="noopener" target="_blank">Railay West · Sunset dinner</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Railay+Walking+Street+restaurants" rel="noopener" target="_blank">Walking Street</a></div><div class="mealstrip">🧗 Climb　→　🏄 SUP 可选　→　🌅 Sunset　→　🍹 1 drink + dinner</div></div>
 </div>
 </section>
-
-
-
-
 <section id="daily"><div class="section-title"><div><h2>每日行程</h2><p>当天路线、装备和备选都放在一起。</p></div><div class="gold">One Day at a Time.</div></div>
 <div class="daynav"><a href="#d0925">09.25</a><a href="#d0926">09.26</a><a href="#d0927">09.27</a><a href="#d0928">09.28</a><a href="#d0929">09.29</a><a href="#d0930">09.30</a><a href="#d1001">10.01</a><a href="#d1002">10.02</a><a href="#d1003">10.03</a><a href="#d1004">10.04</a></div>
-    <article class="day" id="d0925">
-      <div class="date"><strong>09.25</strong><span>抵达 · Ao Nang</span></div>
-      <div class="daybody">
-        <div class="route">TODAY'S ROUTE · 酒店 → 海边</div>
-        <div class="moments">
-          <div><small>MORNING</small><b>BKK 07:05 → KBV 08:30</b></div>
-          <div><small>AFTERNOON</small><b>Grand Mercure 入住 / 恢复</b></div>
-          <div><small>EVENING</small><b>Ao Nang 日落 · 早睡</b></div>
-        </div>
-      </div>
-      <div class="daytools">
-        <div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>护照 / 充电器 / 一套轻便换洗衣物。抵达后优先补水和睡眠。</b></div>
-        <div class="toolbox planb"><small>PLAN B · 天气不好</small><b>下雨：酒店休息 / 泳池 / 按摩。</b></div>
-      </div>
-      <div class="quicklinks"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Grand+Mercure+Krabi+Ao+Nang">Grand Mercure</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ao+Nang+Beach">Ao Nang Beach</a><a class="alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cafe+8.98+Ao+Nang">Café 8.98</a></div>
-    </article>
-    <article class="day" id="d0926">
-      <div class="date"><strong>09.26</strong><span>OW · Day 1</span></div>
-      <div class="daybody">
-        <div class="route">TODAY'S ROUTE · 酒店 → The Dive → 酒店</div>
-        <div class="moments">
-          <div><small>MORNING</small><b>08:30–17:00 理论 + 泳池</b></div>
-          <div><small>AFTERNOON</small><b>The Dive</b></div>
-          <div><small>EVENING</small><b>晚餐 · 补水 · 禁酒</b></div>
-        </div>
-      </div>
-      <div class="daytools">
-        <div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>泳衣 / 毛巾 / 防晒 / 水。提前准备第二天开放水域需要的东西。</b></div>
-        <div class="toolbox planb"><small>PLAN B · 天气不好</small><b>天气影响较小，按潜店安排。</b></div>
-      </div>
-      <div class="quicklinks"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=The+Dive+Ao+Nang+Krabi">The Dive</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Grand+Mercure+Krabi+Ao+Nang">Grand Mercure</a><a class="alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Shatterbox+Kitchen+Bar+Ao+Nang">Shatterbox</a></div>
-    </article>
-    <article class="day" id="d0927">
-      <div class="date"><strong>09.27</strong><span>OW · Day 2</span></div>
-      <div class="daybody">
-        <div class="route">TODAY'S ROUTE · 酒店 → 潜点 → Spa</div>
-        <div class="moments">
-          <div><small>MORNING</small><b>约 07:30 酒店接送</b></div>
-          <div><small>AFTERNOON</small><b>2 次开放水域潜水</b></div>
-          <div><small>EVENING</small><b>按摩 / 夜市可选</b></div>
-        </div>
-      </div>
-      <div class="daytools">
-        <div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>泳衣 / 干衣 / 毛巾 / 防晒 / 晕船药（如需要）/ 少量现金。</b></div>
-        <div class="toolbox planb"><small>PLAN B · 天气不好</small><b>海况差：按潜店调整；夜市可取消。</b></div>
-      </div>
-      <div class="quicklinks"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=The+Dive+Ao+Nang+Krabi">The Dive</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Royal+Palm+Spa+Ao+Nang+Krabi">Royal Palm Spa</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ao+Nang+Landmark+Night+Market">Night Market</a><a class="alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ao+Nang+Landmark+Night+Market">Night Market</a></div>
-    </article>
-    <article class="day" id="d0928">
-      <div class="date"><strong>09.28</strong><span>OW · Day 3</span></div>
-      <div class="daybody">
-        <div class="route">TODAY'S ROUTE · 酒店 → 潜点 → 海边</div>
-        <div class="moments">
-          <div><small>MORNING</small><b>最后 2 潜 · 完成 OW</b></div>
-          <div><small>AFTERNOON</small><b>下午恢复</b></div>
-          <div><small>EVENING</small><b>Ao Nang 日落 · 一杯可选</b></div>
-        </div>
-      </div>
-      <div class="daytools">
-        <div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>和 Day 2 相同，再多带一套完全干燥的衣服。</b></div>
-        <div class="toolbox planb"><small>PLAN B · 天气不好</small><b>如潜水顺延，用 9/29 缓冲。</b></div>
-      </div>
-      <div class="quicklinks"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=The+Dive+Ao+Nang+Krabi">The Dive</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ao+Nang+Beach">Ao Nang Beach</a><a class="alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Kodam+Kitchen+Ao+Nang">Kodam Kitchen</a></div>
-    </article>
-    <article class="day" id="d0929">
-      <div class="date"><strong>09.29</strong><span>Recovery · FLEX</span></div>
-      <div class="daybody">
-        <div class="route">TODAY'S ROUTE · Ao Nang ↔ Railay</div>
-        <div class="moments">
-          <div><small>MORNING</small><b>睡到自然醒 · Brunch</b></div>
-          <div><small>AFTERNOON</small><b>Grand Mercure / 提前 Railay</b></div>
-          <div><small>EVENING</small><b>Spa / 泳池 / 休息</b></div>
-        </div>
-      </div>
-      <div class="daytools">
-        <div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>若转 Railay：凉鞋 / dry bag / 防水手机袋 / 方便上下长尾船的衣服。</b></div>
-        <div class="toolbox planb"><small>PLAN B · 天气不好</small><b>浪大 / 下雨：留在 Ao Nang 休息。</b></div>
-      </div>
-      <div class="quicklinks"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cafe+8.98+Ao+Nang">Café 8.98</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Royal+Palm+Spa+Ao+Nang+Krabi">Royal Palm Spa</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Railay+West+Beach">Railay West</a><a class="alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Much+and+Mellow+Bread+Brunch+Ao+Nang">Much & Mellow</a><a class="alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Thongyib+Thongyod+Ao+Nang">Thongyib</a><a class="alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Klong+Root+Clear+Water+Canal+Krabi">Klong Root</a><a class="alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ao+Thalane+Kayak+Krabi">Ao Thalane</a></div>
-    </article>
-    <article class="day" id="d0930">
-      <div class="date"><strong>09.30</strong><span>Climb · Fire Wall</span></div>
-      <div class="daybody">
-        <div class="route">TODAY'S ROUTE · 酒店 → Fire Wall → 酒店</div>
-        <div class="moments">
-          <div><small>MORNING</small><b>Up in Smoke 6a+</b></div>
-          <div><small>AFTERNOON</small><b>White Hot Hernias / Boob Tube</b></div>
-          <div><small>EVENING</small><b>Fire Starter ~6c+</b></div>
-        </div>
-      </div>
-      <div class="daytools">
-        <div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>自己的岩鞋 / 安全带 / 粉袋；向导提供或当地租 rope + quickdraws。另带涉水凉鞋、1–1.5L 水、电解质、防蚊、防晒、薄雨衣、dry bag、泰铢现金。</b></div>
-        <div class="toolbox planb"><small>PLAN B · 天气不好</small><b>岩壁湿：换墙或缩短 session。</b></div>
-      </div>
-      <div class="quicklinks"><a class="craglink" target="_blank" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688129">theCrag · Fire</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Fire+Wall+Tonsai+Krabi+climbing">Fire Wall</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bhu+Nga+Thani+Resort+Villas+Railay">Bhu Nga Thani</a><a class="alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Railay+East+restaurants">Railay East</a></div>
-    </article>
-    <article class="day" id="d1001">
-      <div class="date"><strong>10.01</strong><span>Climb · Cat Wall</span></div>
-      <div class="daybody">
-        <div class="route">TODAY'S ROUTE · 酒店 → Cat Wall → 酒店</div>
-        <div class="moments">
-          <div><small>MORNING</small><b>Devil Cat ~6a</b></div>
-          <div><small>AFTERNOON</small><b>Cat and Cobra 6b</b></div>
-          <div><small>EVENING</small><b>King Cat ~6c</b></div>
-        </div>
-      </div>
-      <div class="daytools">
-        <div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>岩鞋 / 安全带 / 粉袋 + 涉水凉鞋；水、电解质、小毛巾、防蚊、防晒、dry bag、少量现金。注意手皮和前臂恢复。</b></div>
-        <div class="toolbox planb"><small>PLAN B · 天气不好</small><b>Cat Wall 不合适：换墙或轻松 mileage。</b></div>
-      </div>
-      <div class="quicklinks"><a class="craglink" target="_blank" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688105">theCrag · Cat</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cat+Wall+Tonsai+Krabi+climbing">Cat Wall</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bhu+Nga+Thani+Resort+Villas+Railay">Bhu Nga Thani</a><a class="alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Railay+Walking+Street+restaurants">Walking Street</a></div>
-    </article>
-    <article class="day" id="d1002">
-      <div class="date"><strong>10.02</strong><span>Climb · Cobra</span></div>
-      <div class="daybody">
-        <div class="route">TODAY'S ROUTE · 酒店 → 岩场 → Railay West</div>
-        <div class="moments">
-          <div><small>MORNING</small><b>Snake Skin → Cobra Venom</b></div>
-          <div><small>AFTERNOON</small><b>Smoking Room / Orange Peel</b></div>
-          <div><small>EVENING</small><b>SUP · Railay West 日落</b></div>
-        </div>
-      </div>
-      <div class="daytools">
-        <div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>攀岩装备 + 涉水凉鞋 + 泳衣 / 泳裤；dry bag、手机防水袋、水、电解质、防晒、防蚊。SUP 等水上装备现场租。</b></div>
-        <div class="toolbox planb"><small>PLAN B · 天气不好</small><b>岩壁湿就换墙；海况差取消 SUP。</b></div>
-      </div>
-      <div class="quicklinks"><a class="craglink" target="_blank" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688177">theCrag · Cobra</a><a class="craglink" target="_blank" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688153">theCrag · Melting</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cobra+Wall+Tonsai+Krabi+climbing">Cobra Wall</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Railay+West+Beach">Railay West</a><a class="alt" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Railay+West+Beach+restaurants">Sunset Dinner</a></div>
-    </article>
-    <article class="day" id="d1003">
-      <div class="date"><strong>10.03</strong><span>FLEX · Climb / BKK</span></div>
-      <div class="daybody">
-        <div class="route">TODAY'S ROUTE · Railay → KBV → BKK</div>
-        <div class="moments">
-          <div><small>MORNING</small><b>A：Day 4 project</b></div>
-          <div><small>AFTERNOON</small><b>B：Railay → KBV → BKK</b></div>
-          <div><small>EVENING</small><b>更倾向提前曼谷</b></div>
-        </div>
-      </div>
-      <div class="daytools">
-        <div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>如果转曼谷：护照 / 机票截图 / 充电宝必须随身，行李提前整理。</b></div>
-        <div class="toolbox planb"><small>PLAN B · 天气不好</small><b>海况不稳：优先提前去 Bangkok。</b></div>
-      </div>
-      <div class="quicklinks"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Krabi+International+Airport">KBV Airport</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Suvarnabhumi+Airport">BKK Airport</a><a class="craglink" target="_blank" href="https://basecamptonsai.com/deep-water-solo-trips/">DWS · Basecamp</a></div>
-    </article>
-    <article class="day" id="d1004">
-      <div class="date"><strong>10.04</strong><span>Bangkok · Chengdu</span></div>
-      <div class="daybody">
-        <div class="route">TODAY'S ROUTE · 酒店 → BKK → 成都</div>
-        <div class="moments">
-          <div><small>MORNING</small><b>上午轻松活动</b></div>
-          <div><small>AFTERNOON</small><b>约 14:30 前往 BKK</b></div>
-          <div><small>EVENING</small><b>17:55 VZ3680 → TFU</b></div>
-        </div>
-      </div>
-      <div class="daytools">
-        <div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>护照 / 电子设备 / 充电线 / 退税材料（如有）全部随身。</b></div>
-        <div class="toolbox planb"><small>PLAN B · 天气不好</small><b>天气差：上午活动取消，早点去机场。</b></div>
-      </div>
-      <div class="quicklinks"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Suvarnabhumi+Airport">BKK Airport</a></div>
-    </article></section>
-
-
-
-
-
+<article class="day" id="d0925">
+<div class="date"><strong>09.25</strong><span>抵达 · Ao Nang</span></div>
+<div class="daybody">
+<div class="route">TODAY'S ROUTE · 酒店 → 海边</div>
+<div class="moments">
+<div><small>MORNING</small><b>BKK 07:05 → KBV 08:30</b></div>
+<div><small>AFTERNOON</small><b>Grand Mercure 入住 / 恢复</b></div>
+<div><small>EVENING</small><b>Ao Nang 日落 · 早睡</b></div>
+</div>
+</div>
+<div class="daytools">
+<div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>护照 / 充电器 / 一套轻便换洗衣物。抵达后优先补水和睡眠。</b></div>
+<div class="toolbox planb"><small>PLAN B · 天气不好</small><b>下雨：酒店休息 / 泳池 / 按摩。</b></div>
+</div>
+<div class="quicklinks"><a href="https://www.google.com/maps/search/?api=1&amp;query=Grand+Mercure+Krabi+Ao+Nang" rel="noopener" target="_blank">Grand Mercure</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Ao+Nang+Beach" rel="noopener" target="_blank">Ao Nang Beach</a><a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+8.98+Ao+Nang" rel="noopener" target="_blank">Café 8.98</a></div>
+</article>
+<article class="day" id="d0926">
+<div class="date"><strong>09.26</strong><span>OW · Day 1</span></div>
+<div class="daybody">
+<div class="route">TODAY'S ROUTE · 酒店 → The Dive → 酒店</div>
+<div class="moments">
+<div><small>MORNING</small><b>08:30–17:00 理论 + 泳池</b></div>
+<div><small>AFTERNOON</small><b>The Dive</b></div>
+<div><small>EVENING</small><b>晚餐 · 补水 · 禁酒</b></div>
+</div>
+</div>
+<div class="daytools">
+<div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>泳衣 / 毛巾 / 防晒 / 水。提前准备第二天开放水域需要的东西。</b></div>
+<div class="toolbox planb"><small>PLAN B · 天气不好</small><b>天气影响较小，按潜店安排。</b></div>
+</div>
+<div class="quicklinks"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Dive+Ao+Nang+Krabi" rel="noopener" target="_blank">The Dive</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Grand+Mercure+Krabi+Ao+Nang" rel="noopener" target="_blank">Grand Mercure</a><a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Shatterbox+Kitchen+Bar+Ao+Nang" rel="noopener" target="_blank">Shatterbox</a></div>
+</article>
+<article class="day" id="d0927">
+<div class="date"><strong>09.27</strong><span>OW · Day 2</span></div>
+<div class="daybody">
+<div class="route">TODAY'S ROUTE · 酒店 → 潜点 → Spa</div>
+<div class="moments">
+<div><small>MORNING</small><b>约 07:30 酒店接送</b></div>
+<div><small>AFTERNOON</small><b>2 次开放水域潜水</b></div>
+<div><small>EVENING</small><b>按摩 / 夜市可选</b></div>
+</div>
+</div>
+<div class="daytools">
+<div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>泳衣 / 干衣 / 毛巾 / 防晒 / 晕船药（如需要）/ 少量现金。</b></div>
+<div class="toolbox planb"><small>PLAN B · 天气不好</small><b>海况差：按潜店调整；夜市可取消。</b></div>
+</div>
+<div class="quicklinks"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Dive+Ao+Nang+Krabi" rel="noopener" target="_blank">The Dive</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Royal+Palm+Spa+Ao+Nang+Krabi" rel="noopener" target="_blank">Royal Palm Spa</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Ao+Nang+Landmark+Night+Market" rel="noopener" target="_blank">Night Market</a><a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Ao+Nang+Landmark+Night+Market" rel="noopener" target="_blank">Night Market</a></div>
+</article>
+<article class="day" id="d0928">
+<div class="date"><strong>09.28</strong><span>OW · Day 3</span></div>
+<div class="daybody">
+<div class="route">TODAY'S ROUTE · 酒店 → 潜点 → 海边</div>
+<div class="moments">
+<div><small>MORNING</small><b>最后 2 潜 · 完成 OW</b></div>
+<div><small>AFTERNOON</small><b>下午恢复</b></div>
+<div><small>EVENING</small><b>Ao Nang 日落 · 一杯可选</b></div>
+</div>
+</div>
+<div class="daytools">
+<div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>和 Day 2 相同，再多带一套完全干燥的衣服。</b></div>
+<div class="toolbox planb"><small>PLAN B · 天气不好</small><b>如潜水顺延，用 9/29 缓冲。</b></div>
+</div>
+<div class="quicklinks"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Dive+Ao+Nang+Krabi" rel="noopener" target="_blank">The Dive</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Ao+Nang+Beach" rel="noopener" target="_blank">Ao Nang Beach</a><a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Kodam+Kitchen+Ao+Nang" rel="noopener" target="_blank">Kodam Kitchen</a></div>
+</article>
+<article class="day" id="d0929">
+<div class="date"><strong>09.29</strong><span>Recovery · FLEX</span></div>
+<div class="daybody">
+<div class="route">TODAY'S ROUTE · Ao Nang ↔ Railay</div>
+<div class="moments">
+<div><small>MORNING</small><b>睡到自然醒 · Brunch</b></div>
+<div><small>AFTERNOON</small><b>Grand Mercure / 提前 Railay</b></div>
+<div><small>EVENING</small><b>Spa / 泳池 / 休息</b></div>
+</div>
+</div>
+<div class="daytools">
+<div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>若转 Railay：凉鞋 / dry bag / 防水手机袋 / 方便上下长尾船的衣服。</b></div>
+<div class="toolbox planb"><small>PLAN B · 天气不好</small><b>浪大 / 下雨：留在 Ao Nang 休息。</b></div>
+</div>
+<div class="quicklinks"><a href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+8.98+Ao+Nang" rel="noopener" target="_blank">Café 8.98</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Royal+Palm+Spa+Ao+Nang+Krabi" rel="noopener" target="_blank">Royal Palm Spa</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Railay+West+Beach" rel="noopener" target="_blank">Railay West</a><a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Much+and+Mellow+Bread+Brunch+Ao+Nang" rel="noopener" target="_blank">Much &amp; Mellow</a><a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Thongyib+Thongyod+Ao+Nang" rel="noopener" target="_blank">Thongyib</a><a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Klong+Root+Clear+Water+Canal+Krabi" rel="noopener" target="_blank">Klong Root</a><a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Ao+Thalane+Kayak+Krabi" rel="noopener" target="_blank">Ao Thalane</a></div>
+</article>
+<article class="day" id="d0930">
+<div class="date"><strong>09.30</strong><span>Climb · Fire Wall</span></div>
+<div class="daybody">
+<div class="route">TODAY'S ROUTE · 酒店 → Fire Wall → 酒店</div>
+<div class="moments">
+<div><small>MORNING</small><b>Up in Smoke 6a+</b></div>
+<div><small>AFTERNOON</small><b>White Hot Hernias / Boob Tube</b></div>
+<div><small>EVENING</small><b>Fire Starter ~6c+</b></div>
+</div>
+</div>
+<div class="daytools">
+<div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>自己的岩鞋 / 安全带 / 粉袋；向导提供或当地租 rope + quickdraws。另带涉水凉鞋、1–1.5L 水、电解质、防蚊、防晒、薄雨衣、dry bag、泰铢现金。</b></div>
+<div class="toolbox planb"><small>PLAN B · 天气不好</small><b>岩壁湿：换墙或缩短 session。</b></div>
+</div>
+<div class="quicklinks"><a class="craglink" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688129" rel="noopener" target="_blank">theCrag · Fire</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Fire+Wall+Tonsai+Krabi+climbing" rel="noopener" target="_blank">Fire Wall</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Bhu+Nga+Thani+Resort+Villas+Railay" rel="noopener" target="_blank">Bhu Nga Thani</a><a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Railay+East+restaurants" rel="noopener" target="_blank">Railay East</a></div>
+</article>
+<article class="day" id="d1001">
+<div class="date"><strong>10.01</strong><span>Climb · Cat Wall</span></div>
+<div class="daybody">
+<div class="route">TODAY'S ROUTE · 酒店 → Cat Wall → 酒店</div>
+<div class="moments">
+<div><small>MORNING</small><b>Devil Cat ~6a</b></div>
+<div><small>AFTERNOON</small><b>Cat and Cobra 6b</b></div>
+<div><small>EVENING</small><b>King Cat ~6c</b></div>
+</div>
+</div>
+<div class="daytools">
+<div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>岩鞋 / 安全带 / 粉袋 + 涉水凉鞋；水、电解质、小毛巾、防蚊、防晒、dry bag、少量现金。注意手皮和前臂恢复。</b></div>
+<div class="toolbox planb"><small>PLAN B · 天气不好</small><b>Cat Wall 不合适：换墙或轻松 mileage。</b></div>
+</div>
+<div class="quicklinks"><a class="craglink" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688105" rel="noopener" target="_blank">theCrag · Cat</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Cat+Wall+Tonsai+Krabi+climbing" rel="noopener" target="_blank">Cat Wall</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Bhu+Nga+Thani+Resort+Villas+Railay" rel="noopener" target="_blank">Bhu Nga Thani</a><a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Railay+Walking+Street+restaurants" rel="noopener" target="_blank">Walking Street</a></div>
+</article>
+<article class="day" id="d1002">
+<div class="date"><strong>10.02</strong><span>Climb · Cobra</span></div>
+<div class="daybody">
+<div class="route">TODAY'S ROUTE · 酒店 → 岩场 → Railay West</div>
+<div class="moments">
+<div><small>MORNING</small><b>Snake Skin → Cobra Venom</b></div>
+<div><small>AFTERNOON</small><b>Smoking Room / Orange Peel</b></div>
+<div><small>EVENING</small><b>SUP · Railay West 日落</b></div>
+</div>
+</div>
+<div class="daytools">
+<div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>攀岩装备 + 涉水凉鞋 + 泳衣 / 泳裤；dry bag、手机防水袋、水、电解质、防晒、防蚊。SUP 等水上装备现场租。</b></div>
+<div class="toolbox planb"><small>PLAN B · 天气不好</small><b>岩壁湿就换墙；海况差取消 SUP。</b></div>
+</div>
+<div class="quicklinks"><a class="craglink" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688177" rel="noopener" target="_blank">theCrag · Cobra</a><a class="craglink" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688153" rel="noopener" target="_blank">theCrag · Melting</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Cobra+Wall+Tonsai+Krabi+climbing" rel="noopener" target="_blank">Cobra Wall</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Railay+West+Beach" rel="noopener" target="_blank">Railay West</a><a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Railay+West+Beach+restaurants" rel="noopener" target="_blank">Sunset Dinner</a></div>
+</article>
+<article class="day" id="d1003">
+<div class="date"><strong>10.03</strong><span>FLEX · Climb / BKK</span></div>
+<div class="daybody">
+<div class="route">TODAY'S ROUTE · Railay → KBV → BKK</div>
+<div class="moments">
+<div><small>MORNING</small><b>A：Day 4 project</b></div>
+<div><small>AFTERNOON</small><b>B：Railay → KBV → BKK</b></div>
+<div><small>EVENING</small><b>更倾向提前曼谷</b></div>
+</div>
+</div>
+<div class="daytools">
+<div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>如果转曼谷：护照 / 机票截图 / 充电宝必须随身，行李提前整理。</b></div>
+<div class="toolbox planb"><small>PLAN B · 天气不好</small><b>海况不稳：优先提前去 Bangkok。</b></div>
+</div>
+<div class="quicklinks"><a href="https://www.google.com/maps/search/?api=1&amp;query=Krabi+International+Airport" rel="noopener" target="_blank">KBV Airport</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Suvarnabhumi+Airport" rel="noopener" target="_blank">BKK Airport</a><a class="craglink" href="https://basecamptonsai.com/deep-water-solo-trips/" rel="noopener" target="_blank">DWS · Basecamp</a></div>
+</article>
+<article class="day" id="d1004">
+<div class="date"><strong>10.04</strong><span>Bangkok · Chengdu</span></div>
+<div class="daybody">
+<div class="route">TODAY'S ROUTE · 酒店 → BKK → 成都</div>
+<div class="moments">
+<div><small>MORNING</small><b>上午轻松活动</b></div>
+<div><small>AFTERNOON</small><b>约 14:30 前往 BKK</b></div>
+<div><small>EVENING</small><b>17:55 VZ3680 → TFU</b></div>
+</div>
+</div>
+<div class="daytools">
+<div class="toolbox"><small>TODAY'S KIT · 今日准备</small><b>护照 / 电子设备 / 充电线 / 退税材料（如有）全部随身。</b></div>
+<div class="toolbox planb"><small>PLAN B · 天气不好</small><b>天气差：上午活动取消，早点去机场。</b></div>
+</div>
+<div class="quicklinks"><a href="https://www.google.com/maps/search/?api=1&amp;query=Suvarnabhumi+Airport" rel="noopener" target="_blank">BKK Airport</a></div>
+</article></section>
 <section id="diving">
-<div class="section-title"><div><h2>潜水 · OW</h2><p>The Dive Ao Nang · 9/26–9/28</p></div><div class="gold">Another kind of blue.</div></div>
-<div class="visualgrid">
-  <article class="visualcard"><img src="assets/images/diving/the-dive.jpg" alt="The Dive Ao Nang stylized visual"><div class="visualbody"><small>DIVE SHOP</small><h3>The Dive Ao Nang</h3><p>你的 OW 主基地。Day 1 理论 / 泳池，Day 2–3 出海完成开放水域训练。</p><div class="visualmeta"><span>3 days</span><span>4 open-water dives</span><span>Max 18m</span></div></div></article>
-  <article class="visualcard"><img src="assets/images/diving/local-islands.jpg" alt="Ao Nang Local Islands stylized visual"><div class="visualbody"><small>DIVE ZONE</small><h3>Ao Nang Local Islands</h3><p>9 月课程以本地岛屿为主；具体潜点根据海况和潜店当天安排。</p><div class="visualmeta"><span>Rainy season</span><span>Longtail</span><span>Weather dependent</span></div></div></article>
+<div class="section-title">
+<div><h2>潜水 · OW</h2><p>The Dive Ao Nang · 9/26–9/28</p></div>
+<div class="gold">Another kind of blue.</div>
 </div>
-
-<div class="divegrid">
-  <div class="divecard">
-    <div class="divehead">The Dive Ao Nang</div>
-    <div class="divebody">
-      <h3>潜店</h3>
-      <p>PADI 5 Star。3 天 OW，Day 1 理论 + 泳池，Day 2–3 开放水域。</p>
-      <div class="divechips"><span>9/26–9/28</span><span>最多 4 人</span><span>酒店接送 Day 2–3</span></div>
-      <div class="actions"><a class="btn primary" target="_blank" href="https://thediveaonang.com/courses/open-water-diver/">课程页 ↗</a><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=The+Dive+Ao+Nang+Krabi">地图</a></div>
-    </div>
-  </div>
-  <div class="divecard">
-    <div class="divehead">OW · 学什么</div>
-    <div class="divebody">
-      <h3>主要学习项目</h3>
-      <p>装备组装与检查、呼吸与浮力、面镜排水、调节器找回、伙伴系统、基础水下沟通、下潜 / 上升与安全停留。</p>
-      <div class="divechips"><span>理论</span><span>泳池技巧</span><span>4 次开放水域</span><span>最大 18m</span></div>
-    </div>
-  </div>
-  <div class="divecard">
-    <div class="divehead">Local Islands</div>
-    <div class="divebody">
-      <h3>潜点 / 海况</h3>
-      <p>9 月通常走 Ao Nang Local Islands；具体潜点由当天海况和潜店安排。</p>
-      <div class="divechips"><span>Local Islands</span><span>雨季看海况</span><span>2 dives / day</span></div>
-      <div class="actions"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ao+Nang+Local+Islands+Krabi">潜区地图</a><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=The+Dive+Ao+Nang+Krabi">潜店</a></div>
-    </div>
-  </div>
+<div class="visualgrid dive-visualgrid">
+<article class="visualcard">
+<img alt="The Dive Ao Nang" src="assets/images/diving/the-dive.jpg"/>
+<div class="visualbody">
+<small>DIVE SHOP</small>
+<h3>The Dive Ao Nang</h3>
+<p>你的 OW 主基地。Day 1 理论 / 泳池，Day 2–3 出海完成开放水域训练。</p>
+<div class="visualmeta">
+<span>3 days</span><span>4 open-water dives</span><span>Max 18m</span><span>最多 4 人</span>
 </div>
-<div class="rule"></div>
-<div class="geargrid">
-  <div class="gearbox">
-    <h3>自己带什么</h3>
-    <p>泳衣 / 泳裤、速干衣、毛巾、防晒、拖鞋 / 凉鞋、水和少量现金。容易晕船的话带自己习惯的晕船药。</p>
-    <div class="gearchips"><span>泳衣</span><span>速干衣</span><span>毛巾</span><span>防晒</span><span>水</span><span>晕船药</span></div>
-  </div>
-  <div class="gearbox">
-    <h3>潜店提供为主</h3>
-    <p>BCD、调节器、气瓶、配重、面镜、脚蹼、潜水服等，以课程 package 确认为准。</p>
-    <div class="gearchips"><span>BCD</span><span>Regulator</span><span>Mask</span><span>Fins</span><span>Wetsuit</span></div>
-  </div>
+<div class="actions">
+<a class="btn primary" href="https://thediveaonang.com/courses/open-water-diver/" rel="noopener" target="_blank">课程页 ↗</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Dive+Ao+Nang+Krabi" rel="noopener" target="_blank">潜店地图</a>
+</div>
+</div>
+</article>
+<article class="visualcard">
+<img alt="Ao Nang Local Islands" src="assets/images/diving/local-islands.jpg"/>
+<div class="visualbody">
+<small>DIVE ZONE</small>
+<h3>Ao Nang Local Islands</h3>
+<p>9 月课程以本地岛屿为主；具体潜点根据当天海况和潜店安排。</p>
+<div class="visualmeta">
+<span>Rainy season</span><span>Longtail</span><span>2 dives / day</span><span>Weather dependent</span>
+</div>
+<div class="actions">
+<a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=Ao+Nang+Local+Islands+Krabi" rel="noopener" target="_blank">潜区地图</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Dive+Ao+Nang+Krabi" rel="noopener" target="_blank">潜店</a>
+</div>
+</div>
+</article>
+</div>
+<div class="dive-info-row">
+<div class="gearbox">
+<h3>OW · 学什么</h3>
+<p>装备组装与检查、呼吸与浮力、面镜排水、调节器找回、伙伴系统、基础水下沟通、下潜 / 上升与安全停留。</p>
+<div class="gearchips"><span>理论</span><span>泳池技巧</span><span>伙伴系统</span><span>4 次开放水域</span><span>最大 18m</span></div>
+</div>
+<div class="gearbox">
+<h3>自己带什么</h3>
+<p>泳衣 / 泳裤、速干衣、毛巾、防晒、拖鞋 / 凉鞋、水和少量现金。容易晕船的话带自己习惯的晕船药。</p>
+<div class="gearchips"><span>泳衣</span><span>速干衣</span><span>毛巾</span><span>防晒</span><span>水</span><span>晕船药</span></div>
+</div>
+<div class="gearbox">
+<h3>潜店提供</h3>
+<p>BCD、调节器、气瓶、配重、面镜、脚蹼、潜水服等，以课程 package 最终确认为准。</p>
+<div class="gearchips"><span>BCD</span><span>Regulator</span><span>Mask</span><span>Fins</span><span>Wetsuit</span></div>
+</div>
 </div>
 </section>
 <section id="cragguide">
 <div class="section-title"><div><h2>theCrag 路书入口</h2><p>每天直接打开对应 theCrag 岩场。</p></div><div class="gold">Dive safe. Climb smart.</div></div>
 <div class="visualgrid">
-<article class="visualcard"><img src="assets/images/climbing/fire-wall.jpg" alt="Fire Wall stylized climbing visual"><div class="visualbody"><small>09.30 · DAY 1</small><h3>Fire Wall</h3><p>第一天用来适应户外 sport 节奏、岩质、挂快挂与耐力。计划从 6a+ / 6b+ 逐步进入状态。</p><div class="visualmeta"><span>Warm-up</span><span>6a–6c+</span><span>Tonsai</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688129">theCrag ↗</a><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Fire+Wall+Tonsai+Krabi+climbing">地图</a></div></div></article>
-<article class="visualcard"><img src="assets/images/climbing/cat-wall.jpg" alt="Cat Wall stylized climbing visual"><div class="visualbody"><small>10.01 · DAY 2</small><h3>Cat Wall</h3><p>第二天提高一点强度。Devil Cat → Cat and Cobra → King Cat，根据前一天恢复情况动态调整。</p><div class="visualmeta"><span>Technique</span><span>6a–6c+</span><span>Tonsai</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688105">theCrag ↗</a><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cat+Wall+Tonsai+Krabi+climbing">地图</a></div></div></article>
-<article class="visualcard"><img src="assets/images/climbing/melting-wall.jpg" alt="Cobra and Melting Wall stylized climbing visual"><div class="visualbody"><small>10.02 · DAY 3</small><h3>Cobra / Melting</h3><p>把路线强度和旅行体验放在一起：上午攀爬，下午保留 SUP / Railay West 日落的空间。</p><div class="visualmeta"><span>6a–6c</span><span>Mixed day</span><span>Sunset after</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688177">Cobra ↗</a><a class="btn" target="_blank" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688153">Melting ↗</a></div></div></article>
+<article class="visualcard"><img alt="Fire Wall stylized climbing visual" src="assets/images/climbing/fire-wall.jpg"/><div class="visualbody"><small>09.30 · DAY 1</small><h3>Fire Wall</h3><p>第一天用来适应户外 sport 节奏、岩质、挂快挂与耐力。计划从 6a+ / 6b+ 逐步进入状态。</p><div class="visualmeta"><span>Warm-up</span><span>6a–6c+</span><span>Tonsai</span></div><div class="actions"><a class="btn primary" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688129" rel="noopener" target="_blank">theCrag ↗</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Fire+Wall+Tonsai+Krabi+climbing" rel="noopener" target="_blank">地图</a></div></div></article>
+<article class="visualcard"><img alt="Cat Wall stylized climbing visual" src="assets/images/climbing/cat-wall.jpg"/><div class="visualbody"><small>10.01 · DAY 2</small><h3>Cat Wall</h3><p>第二天提高一点强度。Devil Cat → Cat and Cobra → King Cat，根据前一天恢复情况动态调整。</p><div class="visualmeta"><span>Technique</span><span>6a–6c+</span><span>Tonsai</span></div><div class="actions"><a class="btn primary" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688105" rel="noopener" target="_blank">theCrag ↗</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cat+Wall+Tonsai+Krabi+climbing" rel="noopener" target="_blank">地图</a></div></div></article>
+<article class="visualcard"><img alt="Cobra and Melting Wall stylized climbing visual" src="assets/images/climbing/melting-wall.jpg"/><div class="visualbody"><small>10.02 · DAY 3</small><h3>Cobra / Melting</h3><p>把路线强度和旅行体验放在一起：上午攀爬，下午保留 SUP / Railay West 日落的空间。</p><div class="visualmeta"><span>6a–6c</span><span>Mixed day</span><span>Sunset after</span></div><div class="actions"><a class="btn primary" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688177" rel="noopener" target="_blank">Cobra ↗</a><a class="btn" href="https://www.thecrag.com/en/climbing/thailand/krabi/area/15688153" rel="noopener" target="_blank">Melting ↗</a></div></div></article>
 </div>
 </section>
-
-
 <section id="gear">
 <div class="section-title"><div><h2>装备 / 租赁策略</h2><p>攀岩装备与潜水随身物品分开准备；大件装备以潜店 / 向导提供为主。</p></div><div class="gold">Pack light. Climb smart.</div></div>
 <div class="geargrid">
@@ -463,14 +468,52 @@ nav a{padding:9px 12px!important;font-size:12px!important;text-decoration:none!i
 <div class="noteamber"><b>关于你找到的具体价格：</b>Railay Rock You “绳 + 快挂 500 THB/天、长租 400 THB/天”等信息我先作为<strong>参考价</strong>记录，不把它标成已确认价格。出发前或到 Railay 后再核实营业状态、绳长、快挂数量、绳索磨损/生产年份和是否需要押金。户外装备租赁不要只按最低价选择。</div>
 </section>
 <section id="backup">
-<div class="section-title"><div><h2>FLEX · 备选活动</h2><p>看天气和状态临时选。</p></div><div class="gold">Keep one day loose.</div></div>
-<div class="backup-grid">
-<div class="backup"><img src="assets/images/activities/klong-root.svg" alt="Klong Root stylized visual" style="width:100%;border-radius:10px;margin-bottom:12px"><div class="tag">OPTION A · QUIET</div><h3>Klong Root · 镜湖 / 清水河划船</h3><p>Klong Root / Klong Nam Sai。清水、树林和天然泉眼，整体比较安静。</p><div class="fit"><b>适合：</b>9/29 Recovery Day。9/29 想轻松一点可以选这个。</div><div class="actions"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Klong+Root+Clear+Water+Canal+Krabi">地图</a><a class="btn" target="_blank" href="https://www.odysseytourkrabi.com/kayaking-tour-krabi">参考行程 ↗</a></div></div>
-<div class="backup"><img src="assets/images/activities/ao-thalane.svg" alt="Ao Thalane stylized visual" style="width:100%;border-radius:10px;margin-bottom:12px"><div class="tag">OPTION B · NATURE</div><h3>Ao Thalane · 红树林划船</h3><p>红树林、石灰岩峡谷和 lagoon，常见半日约 4–5 小时，受潮汐影响。</p><div class="fit"><b>适合：</b>9/29；想看红树林和喀斯特就选它。</div><div class="actions"><a class="btn primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ao+Thalane+Kayak+Krabi">地图</a><a class="btn" target="_blank" href="https://www.aonangtravel.co.th/tour/en/54/half-day-tour-kayaking-at-ao-thalane">参考行程 ↗</a></div></div>
-<div class="backup"><img src="assets/images/activities/dws.svg" alt="Deep Water Solo stylized visual" style="width:100%;border-radius:10px;margin-bottom:12px"><div class="tag">OPTION C · CLIMB</div><h3>Deep Water Solo · 深水抱石</h3><p>Tonsai / Railay 出海无绳攀爬。Basecamp 行程约 3–5 小时，受潮汐和风浪影响。</p><div class="fit"><b>适合：</b>10/3 可替换 Day 4；天气合适再去。</div><div class="actions"><a class="btn primary" target="_blank" href="https://basecamptonsai.com/deep-water-solo-trips/">Basecamp ↗</a><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Basecamp+Tonsai+Krabi">地图</a></div></div>
+<div class="section-title">
+<div><h2>FLEX · 备选活动</h2><p>看天气、海况和当天状态临时选。</p></div>
+<div class="gold">Keep one day loose.</div>
+</div>
+<div class="visualgrid flex-grid">
+<article class="visualcard flex-card">
+<img alt="Krabi kayak" src="assets/images/activities/kayak.jpg"/>
+<div class="visualbody">
+<small>KAYAK · NATURE</small>
+<h3>划船 · 镜湖 / 清水河 / 红树林</h3>
+<p>活动本身都是轻松的半日 kayak，不需要为了地点纠结。Klong Root / Klong Nam Sai 偏清水与森林；Ao Thalane 偏红树林和石灰岩峡谷，当天挑一个顺路、天气合适的就去。</p>
+<div class="visualmeta"><span>半日</span><span>适合 9/29</span><span>轻松</span><span>当天选地点</span></div>
+<div class="actions">
+<a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=Klong+Root+Klong+Nam+Sai+Krabi" rel="noopener" target="_blank">清水河地图</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Ao+Thalane+Krabi" rel="noopener" target="_blank">红树林地图</a>
+</div>
+</div>
+</article>
+<article class="visualcard flex-card">
+<img alt="Krabi snorkeling" src="assets/images/activities/snorkeling.jpg"/>
+<div class="visualbody">
+<small>SNORKELING · 4 ISLANDS</small>
+<h3>浮潜 · Chicken / Poda 一带</h3>
+<p>从 Ao Nang 或 Railay 出发做 4 Islands 半日 / 一日行程。优先看 Chicken Island、Poda Island 一带，当天根据能见度和海况决定具体下水点与 longtail / speedboat。</p>
+<div class="visualmeta"><span>半日 / 一日</span><span>适合 9/29</span><span>看海况</span><span>轻松</span></div>
+<div class="actions">
+<a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=Chicken+Island+Krabi" rel="noopener" target="_blank">Chicken Island</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Poda+Island+Krabi" rel="noopener" target="_blank">Poda Island</a>
+</div>
+</div>
+</article>
+<article class="visualcard flex-card">
+<img alt="Deep Water Solo Krabi" src="assets/images/activities/dws.jpg"/>
+<div class="visualbody">
+<small>OPTION · CLIMB</small>
+<h3>Deep Water Solo · 深水抱石</h3>
+<p>Tonsai / Railay 出海无绳攀爬。Basecamp 行程约 3–5 小时，受潮汐、风浪和当天安全条件影响，适合作为 10/3 Day 4 的替代方案。</p>
+<div class="visualmeta"><span>3–5 小时</span><span>适合 10/3</span><span>潮汐依赖</span><span>中等</span></div>
+<div class="actions">
+<a class="btn primary" href="https://basecamptonsai.com/deep-water-solo-trips/" rel="noopener" target="_blank">Basecamp ↗</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Basecamp+Tonsai+Krabi" rel="noopener" target="_blank">地图</a>
+</div>
+</div>
+</article>
 </div>
 </section>
-
 <section id="checklist">
 <div class="section-title"><div><h2>出发前 Checklist</h2><p>出发前快速过一遍。</p></div><div class="gold">Ready before takeoff.</div></div>
 <div class="checkgrid">
@@ -483,12 +526,54 @@ nav a{padding:9px 12px!important;font-size:12px!important;text-decoration:none!i
 </div>
 </section>
 <section id="pending"><div class="section-title"><div><h2>待确认</h2><p>确认后同步到对应日期。</p></div></div><div class="pending"><div><small>暂定</small><b>9/29 住宿</b></div><div><small>待预订</small><b>KBV → BKK</b></div><div><small>待确认</small><b>攀岩向导</b></div><div><small>待决定</small><b>10/3 Bangkok</b></div>
-<div class="visualgrid">
-  <article class="visualcard">
-    <img src="assets/images/food/cafe-898.svg" alt="Café 8.98 stylized location visual">
-    <div class="visualbody"><small>COFFEE · AO NANG</small><h3>Café 8.98</h3><p>早餐 / brunch / 咖啡的重点打卡点。适合抵达后的轻松下午，或 9/29 Recovery Day。</p><div class="visualmeta"><span>Breakfast</span><span>Brunch</span><span>Ao Nang</span></div><div class="actions"><a class="btn primary" target="_blank" href="https://cafe898.com/">官网 ↗</a><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cafe+8.98+Ao+Nang">地图</a></div></div>
-  </article>
-</div>
 </div></section>
-<footer><span>KRABI 2026　|　Dive · Climb · Unwind</span><span class="gold">Good dives. Good climbs. Good days.</span><span>Step 5 · food & recovery photo pass</span></footer>
-</div></body></html>
+<footer><span>KRABI 2026　|　Dive · Climb · Unwind</span><span class="gold">Good dives. Good climbs. Good days.</span><span>Step 7.1 · FLEX crop fix</span></footer>
+</div>
+<script>
+(() => {
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+
+  const items = [...nav.querySelectorAll('a[href^="#"]')]
+    .map(link => ({ link, section: document.querySelector(link.getAttribute('href')) }))
+    .filter(item => item.section);
+
+  let currentLink = null;
+
+  function setActive(link) {
+    if (!link || link === currentLink) return;
+    currentLink = link;
+
+    items.forEach(({link: a}) => {
+      const active = a === link;
+      a.classList.toggle('active', active);
+      if (active) a.setAttribute('aria-current', 'location');
+      else a.removeAttribute('aria-current');
+    });
+
+    // Keep the active tab visible in the horizontally scrollable nav
+    const targetLeft = link.offsetLeft - nav.clientWidth / 2 + link.clientWidth / 2;
+    nav.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+  }
+
+  function updateActiveSection() {
+    const marker = nav.getBoundingClientRect().height + 100;
+    let active = items[0];
+
+    for (const item of items) {
+      if (item.section.getBoundingClientRect().top <= marker) active = item;
+      else break;
+    }
+    if (active) setActive(active.link);
+  }
+
+  items.forEach(({link}) => {
+    link.addEventListener('click', () => setActive(link));
+  });
+
+  window.addEventListener('scroll', updateActiveSection, { passive: true });
+  window.addEventListener('resize', updateActiveSection);
+  updateActiveSection();
+})();
+</script>
+</body></html>

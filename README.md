@@ -64,3 +64,19 @@ The remaining featured food/recovery cards now use supplied location images:
 - Café 8.98
 - Thongyib Thongyod
 - Royal Palm Spa
+
+
+## Step 6 Code Review
+
+- Removed the accidental duplicate Café 8.98 card under Pending.
+- Simplified the OW section to two photo cards plus one compact information row.
+- Added course/map links directly to the photo cards.
+- Added scroll-aware navigation highlighting.
+- Removed obsolete dive-card CSS and hardened external links.
+
+## Step 7 FLEX
+
+- Merged Klong Root / Klong Nam Sai / Ao Thalane into one flexible kayak option.
+- Added a 4 Islands snorkeling option focused on Chicken / Poda area.
+- Kept Deep Water Solo as the climbing alternative.
+- Replaced all three FLEX illustrations with the three user-supplied photos.
