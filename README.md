@@ -117,3 +117,9 @@ The remaining featured food/recovery cards now use supplied location images:
 - The strip opens only when `每日行程` is selected.
 - It stays pinned below the main navigation while browsing Daily.
 - It closes when another main section is selected or after scrolling completely out of Daily.
+
+## Step 11.2 · Date Anchor Offset
+
+- Date shortcuts now stop below both sticky navigation bars.
+- Added extra visual spacing so the selected day header is never covered.
+- Uses a calculated offset based on the actual main-nav and date-nav heights.

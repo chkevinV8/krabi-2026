@@ -276,6 +276,17 @@ body.daily-date-nav-on #daily-date-nav{
 
 body.daily-date-nav-on #daily{scroll-margin-top:122px}
 @media(max-width:760px){body.daily-date-nav-on #daily{scroll-margin-top:110px}}
+
+/* Step 11.2 · date anchor offset
+   Keep the selected day card fully visible below both sticky nav bars. */
+#daily .day{
+  scroll-margin-top: 148px;
+}
+@media(max-width:760px){
+  #daily .day{
+    scroll-margin-top: 128px;
+  }
+}
 </style><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." name="description"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." property="og:title"/><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." property="og:description"/><meta content="website" property="og:type"/><meta content="https://chkevinv8.github.io/krabi-2026/" property="og:url"/><meta content="https://chkevinv8.github.io/krabi-2026/assets/images/og-cover.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="KRABI 2026 — Dive Deep. Climb High. Live Slow." name="twitter:title"/><meta content="A 10-day dive, climb and slow-travel field guide for Ao Nang, Railay and Tonsai." name="twitter:description"/><meta content="https://chkevinv8.github.io/krabi-2026/assets/images/og-cover.jpg" name="twitter:image"/><link href="assets/favicon.png" rel="icon" type="image/png"/></head><body><div class="app">
 <header class="hero hero-image-only">
 <img alt="Krabi 2026 · Dive · Climb · Unwind" src="assets/images/hero.png"/>
@@ -321,7 +332,6 @@ body.daily-date-nav-on #daily{scroll-margin-top:122px}
 </div>
 </section>
 <section id="daily"><div class="section-title"><div><h2>每日行程</h2><p>当天路线、装备和备选都放在一起。</p></div><div class="gold">One Day at a Time.</div></div>
-
 <article class="day" id="d0925">
 <div class="date"><strong>09.25</strong><span>抵达 · Ao Nang</span></div>
 <div class="daybody">
@@ -806,5 +816,32 @@ body.daily-date-nav-on #daily{scroll-margin-top:122px}
   }
 
   setMainNavHeight();
+})();
+</script><script>
+(() => {
+  const dateNav = document.querySelector('#daily-date-nav');
+  const mainNav = document.querySelector('nav');
+  if (!dateNav || !mainNav) return;
+
+  dateNav.querySelectorAll('a[href^="#d"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+
+      e.preventDefault();
+
+      // Let the sticky date strip finish opening, then position the day card
+      // with a small visual gap below both navigation bars.
+      requestAnimationFrame(() => {
+        const mainH = mainNav.getBoundingClientRect().height;
+        const dateH = dateNav.getBoundingClientRect().height;
+        const gap = window.innerWidth <= 760 ? 12 : 18;
+        const y = target.getBoundingClientRect().top + window.scrollY - mainH - dateH - gap;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        history.replaceState(null, '', link.getAttribute('href'));
+      });
+    });
+  });
 })();
 </script></body></html>
