@@ -80,3 +80,11 @@ The remaining featured food/recovery cards now use supplied location images:
 - Added a 4 Islands snorkeling option focused on Chicken / Poda area.
 - Kept Deep Water Solo as the climbing alternative.
 - Replaced all three FLEX illustrations with the three user-supplied photos.
+
+## Step 9 · Sharing Ready
+
+- Added Open Graph sharing metadata.
+- Added Twitter/X large-image metadata.
+- Added a 1200×630 social preview image.
+- Added a favicon.
+- Uses the latest cover with “Dive Deep. Climb High. Live Slow.” and no party-size label.
