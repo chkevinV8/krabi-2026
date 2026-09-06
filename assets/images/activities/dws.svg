@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+      <rect width="900" height="520" fill="#d8ece9"/>
+      
+          <rect width="900" height="520" fill="#d8ece9"/>
+          <path d="M0 335 C210 280 320 360 500 318S730 300 900 348V520H0Z" fill="#246f7e"/>
+          <path d="M95 0h370l-85 342H185z" fill="#315845"/>
+          <circle cx="480" cy="205" r="10" fill="#f9f4e9"/>
+          <path d="M480 217l-10 58m10-42l38 25m-40 10l-28 39" stroke="#f9f4e9" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M555 395q35 20 70 0M535 420q55 28 110 0" stroke="#f7f1e5" stroke-width="5" fill="none" opacity=".75"/>
+        
+      <rect x="34" y="34" width="420" height="102" rx="14" fill="#103d32" opacity=".94"/>
+      <text x="58" y="78" fill="#f7f1e5" font-family="Georgia,serif" font-size="32" font-weight="700">DEEP WATER SOLO</text>
+      <text x="58" y="110" fill="#d0a34f" font-family="Arial,sans-serif" font-size="16" letter-spacing="2">TIDE & WEATHER DEPENDENT</text>
+    </svg>
